@@ -1,0 +1,326 @@
+@media (min-width: 770px) { /* bigger than mobile */
+	#menubutton, #closebutton, #overlay {
+		display:none;
+	}
+	#menu {
+		margin:0;
+		padding:0;
+		background:transparent;
+		font-family: 'Roboto Condensed', sans-serif;
+		text-transform:uppercase;
+		min-height:68px;
+	}
+	#menu * {
+		-webkit-transition:border 0.28s ease;
+		transition:border 0.28s ease;
+		-webkit-transition:color 0.28s ease;
+		transition:color 0.28s ease;
+	}
+	a.menuhomelink {
+		-webkit-transition:background-color 0.28s ease !important;
+		transition:background-color 0.28s ease !important;		
+		max-height:62px;
+	}
+	a.menuhomelink:hover {
+		background:#32a8bd;
+	}
+	a.menuhomelink img {
+		display:inline-block;
+		padding:0;
+		margin:0 auto;
+		-webkit-transition:all 0.28s ease;
+		transition:all 0.28s ease;
+	}
+	#menu ul {
+		margin:0;
+		padding:0;
+	}
+	#menu ul li {
+		display:inline-block;
+		vertical-align:top;
+		list-style-type:none;
+		position:relative;
+		border-top:3px solid transparent;
+		-webkit-transition:border-top 0.28s ease;
+		transition:border-top 0.28s ease;
+		top:0;
+	}
+	#menu ul li:hover {
+		border-top:3px solid #32a8bd !important;
+	}
+	
+	#menu ul li a {
+		padding:0 15px;
+		margin:0;
+		display:inline-block;
+		color:#aaa;
+		line-height:65px;
+	}
+	#menu ul li.current, #menu ul li.active {
+		border-top:3px solid #BD4932;
+	}
+	
+	#menu ul li.current a {
+		font-weight:700;
+		color:#BD4932;
+	}
+	#menu ul li:hover a {
+		color:#32a8bd;
+	}
+
+	/* child menu items */	
+	#menu ul li ul {
+		display:none;
+		opacity:0;  /* hidden by default */
+		position:absolute;
+		-webkit-transition:all 0.28s ease;
+		transition:all 0.28s ease;
+		margin:0 auto;
+		z-index:9999;
+		min-width:250px;
+		border-radius:3px;
+	}
+	#menu ul li:hover ul {
+		display:block;
+		opacity:1;
+	}
+	#menu ul li ul li {
+		background:#212121;
+		color:#fff !important;
+		display:block;
+		border:none !important;
+		position:relative;
+		border-radius:0;
+		transition:all 0.28s ease;
+	}
+	#menu ul li ul li img {
+		width:16px;
+		height:16px;
+		margin-right:8px;
+	}
+	#menu ul li ul li.active {
+		border:none;
+		border-left:#545454 solid 3px;
+		background:#BD4932;
+	}
+	#menu ul li ul li:hover {
+		border:none !important;
+		background:#32a8bd;
+	}
+	#menu ul li ul li a {
+		color:#ffffff !important;
+		padding:15px;
+		line-height:normal;
+		border-bottom:0 !important;
+		width:calc(100% - 30px);
+	}
+	#menu ul li ul li.current a {	
+		border-bottom:0 !important;
+		color:#212121;
+		font-weight:bold;
+	}
+	#menu ul li ul li:hover a {	
+		border-bottom:0;
+	}
+	
+	#menu ul li.expanded ul {
+		display:none;
+	}
+
+	#menu ul li ul li ul {
+		display:none !important;  /* hidden by default */
+	}
+	
+	/*#menu ul li.deeper {
+		padding-right:20px;
+	}
+	#menu .expandbutton {
+		position:absolute;
+		right:0;
+		width:24px;
+		height:50px;
+		margin:0;
+		margin-right:5px;
+		padding:0;
+		cursor:pointer;
+	}
+	#menu .expandbutton:focus {
+		outline:0;
+	}
+	#menu .expandbuttoninner {
+		position:absolute;
+		right:0;
+		width:24px;
+		height:24px;
+		background:#545454 url('../img/expand.png') center no-repeat;
+		padding:0;
+		cursor:pointer;
+		border-radius:50px;
+		margin:13px 0;
+	}
+	#menu .expandbutton.flipped {
+		transform:rotate(180deg);
+	}
+	*/
+	
+}
+
+@media (max-width: 769px) { /* mobile */
+	/* slide out menu */
+	#menubutton {
+		position:absolute;
+		padding:15px;
+		width:24px;
+		height:24px;
+		cursor:pointer;
+		z-index:997;
+	}
+	#menu.open #closebutton {
+		transform:rotate(360deg);
+	}
+	#closebutton {
+		padding:15px;
+		width:24px;
+		height:24px;
+		cursor:pointer;
+		display:block;
+		transition:transform 0.56s ease;
+	}
+	#menu {
+		position:fixed;
+		width:0;
+		height:0;
+		margin-left:0;
+		margin-top:0;
+		background:#dba43a;
+		z-index:99999;
+		transition:all 0.28s ease-in;
+		overflow:hidden;
+		font-family: 'Roboto Condensed', sans-serif;
+		text-transform:uppercase;
+		text-align:center;
+		border-radius:0 50vh 50vh 0;
+		transition:all 0.28s ease-out 0.28s,
+					border-radius 0.28s ease-in;
+		animation-name: gradbg;
+		animation-duration: 18s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes gradbg {
+		0% 		{background:#32bd53;}
+		23% 	{background:#32bd53;}
+		33% 	{background:#dba43a;}
+		57% 	{background:#dba43a;}
+		67% 	{background:#32a8bd;}
+		90% 	{background:#32a8bd;}
+		100% 	{background:#32bd53;}
+	}
+	#menu.open {
+		margin-left:0;
+		margin-top:0;
+		width:100%;
+		height:100%;
+		border-radius:0px;
+		transition:all 0.28s ease-in,
+					border-radius 0.28s ease-out 0.28s;
+	}
+	#overlay {
+		display:none;
+		background:transparent;
+		opacity:0.8;
+		position:fixed;
+		height:110%;
+		width:110%;
+		margin:0;
+		padding:0;
+		z-index:99998;
+		overflow:hidden;
+	}
+	#menu ul {
+		margin:0;
+		padding:0;
+		opacity:0;
+		transform:translateX(-100vw);
+		transition:opacity 0.28s ease-in 0s,
+					transform 0.28s ease-in 0s;
+	}
+	#menu.open ul {
+		opacity:1;
+		transform:translateX(0);
+		transition:opacity 0.56s ease-out,
+				transform 0.56s ease-out;
+	}
+	#menu ul * {
+		-webkit-transition:all 0.28s ease;
+		transition:all 0.28s ease;
+		margin:0 auto;
+		max-width:80%;
+	}
+	#menu ul li {
+		list-style-type:none;
+		height:calc(20vh - 24px);
+	}
+	#menu ul li a {
+		padding:15px 30px;
+		margin:0;
+		width:calc(100% - 60px);
+		font-size:2em;
+		height:calc(100% - 30px);
+		display:inline-block;	
+		color:#212121;
+		border-radius:300px;
+	}
+	#menu ul li a:hover {
+		background:transparent;
+	}
+	#menu ul li.current {
+		color:#fff;
+	}
+	#menu ul li.current a {
+		color:#fff;
+	}
+	#menu ul li ul li a {
+		padding-left:50px;
+	}
+	#menu ul li.current ul li a {
+		font-weight:normal;
+	}
+	#menu ul li ul li a:before {
+		content:"- ";
+	}
+	#menu ul li ul {
+		height:0;
+		overflow:hidden;
+	}
+	#menu ul li.expanded ul {
+		height:auto;
+	}
+	#menu .expandbutton {
+		display:none;
+		position:absolute;
+		right:0;
+		width:50px;
+		height:50px;
+		margin:0;
+		padding:0;
+		cursor:pointer;
+	}
+	#menu .expandbutton:focus {
+		outline:0;
+	}
+	#menu .expandbuttoninner {
+		position:absolute;
+		right:0;
+		width:30px;
+		height:30px;
+		background:#e2e2e2 url('../img/expand.png') center no-repeat;
+		padding:0;
+		cursor:pointer;
+		border-radius:50px;
+		margin:10px;
+	}
+	#menu .expandbutton.flipped {
+		-webkit-transform:rotate(180deg);
+		        transform:rotate(180deg);
+	}
+}
