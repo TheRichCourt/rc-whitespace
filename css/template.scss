@@ -1,5 +1,23 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../font/icomoon.eot');
+    src:  url('../font/icomoon.eot') format('embedded-opentype'),
+        url('../font/icomoon.ttf') format('truetype'),
+        url('../font/icomoon.woff') format('woff'),
+        url('../font/icomoon.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin movingBackground() {
+    animation-name: rotateGrad;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    background-size: 300% 300%;
+}
+
 @mixin redGrad() {
     background: #bd4932;
     background: -moz-linear-gradient(-45deg, #bd4932 0%, #bc327c 100%);
@@ -14,6 +32,7 @@
     background: -webkit-radial-gradient(center, ellipse cover, #bc327c 0%,#bd4932 100%);
     background: radial-gradient(ellipse at center, #bc327c 0%,#bd4932 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bc327c', endColorstr='#bd4932',GradientType=1 );
+    @include movingBackground();
 }
 
 @mixin blueGrad() {
@@ -30,6 +49,7 @@
     background: -webkit-radial-gradient(center, ellipse cover, #32bc6e 0%,#32a8bd 100%);
     background: radial-gradient(ellipse at center, #32bc6e 0%,#32a8bd 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32bc6e', endColorstr='#32a8bd',GradientType=1 );
+    @include movingBackground();
 }
 
 @mixin yellowGrad() {
@@ -38,7 +58,15 @@
     background: -webkit-linear-gradient(-45deg, #dba43a 0%,#d83a45 100%);
     background: linear-gradient(135deg, #dba43a 0%,#d83a45 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dba43a', endColorstr='#d83a45',GradientType=1 );
+}
 
+@mixin yellowGradRadial() {
+    background: #32a8bd;
+    background: -moz-radial-gradient(center, ellipse cover, #d83a45 0%, #dba43a 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, #d83a45 0%,#dba43a 100%);
+    background: radial-gradient(ellipse at center, #d83a45 0%,#dba43a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d83a45', endColorstr='#dba43a',GradientType=1 );
+    @include movingBackground();
 }
 
 @mixin greenGrad() {
@@ -47,6 +75,15 @@
     background: -webkit-linear-gradient(-45deg, #32bd53 5%,#75bc32 100%);
     background: linear-gradient(135deg, #32bd53 5%,#75bc32 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32bd53', endColorstr='#75bc32',GradientType=1 );
+}
+
+@mixin greenGradRadial() {
+    background: #32a8bd;
+    background: -moz-radial-gradient(center, ellipse cover, #d83a45 0%, #dba43a 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, #d83a45 0%,#dba43a 100%);
+    background: radial-gradient(ellipse at center, #d83a45 0%,#dba43a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d83a45', endColorstr='#dba43a',GradientType=1 );
+    @include movingBackground();
 }
 
 // colours
@@ -365,6 +402,7 @@ ul.breadcrumb li {
         width: 100%;
         margin: 0 auto;
         max-width: 100%;
+        display: flex;
     }
     div.cols-3 div.span4 {
         max-width: calc(33% - 50px);
@@ -383,6 +421,7 @@ ul.breadcrumb li {
         width: 1200px;
         margin: 0 auto;
         max-width: 100%;
+        display: flex;
     }
     div.cols-2 div.span6 {
         max-width: calc(50% - 50px);
@@ -728,6 +767,7 @@ a.button, .button, .btn, button {
       transition: width .4s ease, height .4s ease, left .4s ease, top .4s ease, border-radius .4s ease, background-color .4s ease;
     }
     &:hover {
+        color: #fff;
       &::before {
         top: calc(50% - 100px);
         left: 0;
@@ -823,5 +863,17 @@ input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hove
     @include yellowGrad();
     width: calc(100% - 20px);
 }
+
+p.readmore a {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+a.btn .icon-chevron-right {
+    display: none;
+}
+
 @import '_menu.scss';
+@import '_home.scss';
+
 /*# sourceMappingURL=template.css.map */

@@ -31,12 +31,6 @@ $id = JFactory::getApplication()->input->getInt('id');
 $article->load($id);
 $images = json_decode($article->images);
 
-// Add JavaScript
-$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/menu.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/menu.js'));
-$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/parallax.min.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/parallax.min.js'));
-$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/template.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/template.js'));
-$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/jquery.scrollify.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/jquery.scrollify.js'));
-
 // Add Stylesheets
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/template.css'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/css/template.css'));
 // $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/menu.css'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/css/menu.css'));
@@ -69,15 +63,20 @@ $doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css'.'?'.filemtime(
 	//var_dump($article);
 	$showTitleAtTop = false;
 
-	if ($this->countModules('header') > 0) {
-		$headerAttributes = 'class="extendedheader" data-bleed="10" data-speed="0.5" data-parallax="scroll" data-image-src="'. JUri::root(true) . '/' . $bg_image.'"';
-	} else if (isset($images->image_intro) && $images->image_intro != '') {
-		$headerAttributes = 'class="extendedheader" data-bleed="10" data-speed="0.5" data-parallax="scroll" data-image-src="'. JUri::root(true) . '/' . $images->image_intro.'"';
-		$showTitleAtTop = true;
+	if ($bg_image != '') {
+		if ($this->countModules('header') > 0) {
+			$headerAttributes = 'class="extendedheader" data-bleed="10" data-speed="0.5" data-parallax="scroll" data-image-src="'. JUri::root(true) . '/' . $bg_image.'"';
+		} else if (isset($images->image_intro) && $images->image_intro != '') {
+			$headerAttributes = 'class="extendedheader" data-bleed="10" data-speed="0.5" data-parallax="scroll" data-image-src="'. JUri::root(true) . '/' . $images->image_intro.'"';
+			$showTitleAtTop = true;
+		} else {
+			$headerAttributes = '';
+		}
 	} else {
-		$headerAttributes = '';
+		if ($this->countModules('header') > 0) {
+			$headerAttributes = 'class="extendedheader"';
+		}
 	}
-
 	?>
 
 	<div id="header" <?php echo $headerAttributes ?> >
@@ -135,6 +134,16 @@ $doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css'.'?'.filemtime(
 			<jdoc:include type="modules" name="footer" style="none" />
 		</div>
 	</div>
+
+	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/menu.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/menu.js')) ?>
+	<?=  createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/parallax.min.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/parallax.min.js')) ?>
+	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/jquery.scrollify.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/jquery.scrollify.js')) ?>
+	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/noise.min.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/noise.min.js')) ?>
+	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/template.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/template.js')) ?>
 </body>
 </html>
 <?php
+
+function createScriptTag($url) {
+	return '<script src="' . $url . '" type="text/javascript"></script>';
+}
