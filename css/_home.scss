@@ -1,0 +1,173 @@
+body.home {
+    #fullpage {
+        .rc_onepage_section {
+            &.yellow {
+                @include yellowGradRadial();
+            }
+            &.red {
+                @include redGradRadial();
+            }
+            &.blue {
+                @include blueGradRadial();
+            }
+            &.green {
+                @include greenGradRadial();
+            }
+        }
+    }
+    #header {
+        @include redGradRadial();
+    }
+    a {
+        color: #fff;
+        font-weight: bold;
+    }
+    a:hover {
+        color: #212121;
+    }
+
+    [class^="icon-"], [class*=" icon-"] {
+        /* use !important to prevent issues with browser extensions that change fonts */
+        font-family: 'icomoon' !important;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .icon-twitter:before {
+        content: "\ea96";
+    }
+    .icon-github:before {
+        content: "\eab0";
+    }
+
+    body {padding:0; margin:0; background:#151515;}
+    #wrapper {background:#151515;}
+    #contentwrapper, #footer {
+        display:none;
+    }
+    div.rc_onepage_section {
+        height:100vh;
+        width:100vw;
+        padding:0;
+        margin:0;
+        display:table-cell;
+        vertical-align:middle;
+        overflow-x:hidden;
+    }
+    div.rc_onepage_section_inner {
+        max-width:1200px;
+        width:80%;
+        margin:0 auto;
+        overflow-x:visible;
+    }
+
+    @media (min-width: 770px) { /* bigger than mobile */
+        div.rc_onepage_slider {
+            display:inline-block;
+            vertical-align:middle;
+            width:50%;
+            margin-left:10%;
+            margin:0;
+            padding:0;
+            transition:all 1s cubic-bezier(.37,0,.14,1.2);
+            opacity:0;
+        }
+        div.rc_onepage_slider:nth-child(odd) {
+            transform:translateX(-500px);
+            text-align:left;
+        }
+        div.rc_onepage_slider:nth-child(even) {
+            transform:translateX(500px) translatez(0);
+            text-align:right;
+        }
+        div.rc_onepage_slider_in {
+            opacity:1;
+            transform:translateX(0) !important;
+        }
+        div.rc_onepage_slider_in:nth-child(even) {
+            transform:translateX(0) rotate(-5deg) !important;
+        }
+        div.rc_onepage_slider img {
+            max-width:80%;
+        }
+        div.rc_onepage_slider p {
+            max-width:450px;
+        }
+        #menu {
+            position:fixed !important;
+            /*background:#212121 !important;*/
+        }
+    }
+
+    @media (max-width: 769px) { /* mobile */
+        div.rc_onepage_slider {
+            display: block;
+            vertical-align: middle;
+            width:100%;
+            margin: 0 auto;
+            padding: 0;
+            transition: all 1s cubic-bezier(.37,0,.14,1.2);
+            opacity: 0;
+        }
+        div.rc_onepage_slider:nth-child(odd) {
+            transform:translateX(-500px);
+            text-align:center;
+        }
+        div.rc_onepage_slider:nth-child(even) {
+            transform:translateX(500px);
+            text-align:center;
+        }
+        div.rc_onepage_slider_in {
+            opacity:1;
+            transform:translateX(0) !important;
+        }
+        div.rc_onepage_slider_in:nth-child(odd) {
+            opacity:1;
+            transform:translateX(0) !important;
+        }
+        div.rc_onepage_slider img {
+            max-width:80%;
+        }
+        div.rc_onepage_slider p {
+            max-width:450px;
+        }
+    }
+    div.rc_skill_container {
+        display:inline-block;
+        max-width:100%;
+        width:120px;
+        height:120px;
+        background:#ffffff10;
+        padding:10px;
+        border-radius:65px;
+        transition:all .28s cubic-bezier(.37,0,.14,2);
+        margin: 10px;
+        position:relative;
+        transform: translateZ(0) translateX(var(--animation-x)) translateY(var(--animation-y));
+    }
+    img.rc_skill {
+        width:80px;
+        height:80px;
+        position:absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+    }
+    div.rc_skill_container {
+        &:hover {
+            transform:scale(1.5,1.5) rotate(5deg);
+            background:#fff;
+            transition:all .28s cubic-bezier(.37,0,.14,5);
+        }
+    }
+}
