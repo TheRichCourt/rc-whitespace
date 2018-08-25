@@ -1,4 +1,46 @@
 (function() {
+    jQuery.extend({
+        replaceTag: function (currentElem, newTagObj, keepProps) {
+            var $currentElem = jQuery(currentElem);
+            var i, $newTag = jQuery(newTagObj).clone();
+            if (keepProps) {//{{{
+                newTag = $newTag[0];
+                newTag.className = currentElem.className;
+                jQuery.extend(newTag.classList, currentElem.classList);
+                jQuery.extend(newTag.attributes, currentElem.attributes);
+            }//}}}
+            $currentElem.wrapAll($newTag);
+            $currentElem.parent().html($currentElem.attr('value'));
+            return this; // Suggested by ColeLawrence
+        }
+    });
+    
+    jQuery.fn.extend({
+        replaceTag: function (newTagObj, keepProps) {
+            return this.each(function() {
+                jQuery.replaceTag(this, newTagObj, keepProps);
+            });
+        }
+    });
+
+    jQuery.extend({
+        nestTags: function (currentElems, newTagObj, keepProps) {
+            var $currentElems = jQuery(currentElems);
+            var $newTag = jQuery(newTagObj).clone();
+            if (keepProps) {//{{{
+                newTag = $newTag[0];
+            }//}}}
+            $currentElems.wrapAll($newTag);
+            return this; // Suggested by ColeLawrence
+        }
+    });
+    
+    jQuery.fn.extend({
+        nestTags: function (newTagObj, keepProps) {
+            jQuery.nestTags(this, newTagObj, keepProps);
+        }
+    });
+    
     jQuery(document).scroll(function() {
         jQuery('.rc_onepage_slider, body.home #header').each(function() {
                 switchIfVisible(jQuery(this));
@@ -78,6 +120,9 @@
     });
 
     noise.seed(Math.random());
+
+    jQuery('input.mshop_button').replaceTag('<button class="mshop_button" type="submit">');
+    jQuery('div.msgroup_intro').nestTags('<div class="msgroup_intro_wrapper">');
 })();
 
 var elements = document.querySelectorAll('.rc_skill_container');

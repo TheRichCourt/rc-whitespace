@@ -1,0 +1,275 @@
+div.mshop {
+    max-width: 900px;
+    margin: 0 auto;
+	background:#f2f2f2;
+	padding:25px;
+	text-align:center;
+    border-radius: 3px;
+}
+div.msgroup_leading {
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 3px;
+    padding: 25px;
+    text-align: center;
+    max-width: calc(100% - 50px);
+    margin-bottom: 20px;
+}
+div.msgroup_intro_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+@media (max-width: 770px) { /* mobile */
+    div.msgroup_intro {
+        display: block;
+        margin: 0 10px;
+        max-width: calc(100% - 72px);
+        background: #fff;
+        border-radius: 3px;
+        padding: 25px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+@media (min-width: 770px) { /* bigger than mobile */
+    div.msgroup_intro {
+        display: inline-block;
+        margin: 0 10px;
+        max-width: calc(50% - 72px);
+        vertical-align:top; 
+        background: #fff;
+        border-radius: 3px;
+        padding: 25px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+div.msp_panel {
+    display: inline-block;
+    margin: 5px;
+}
+div.ms_dlb form {
+    display: inline-block;
+}
+div.ms_bnb form {
+    display: inline-block;
+}
+div.mspayline {
+    clear: left;
+    margin: 2em;
+    text-align: center;
+}
+div.mspayline span {
+    display: block;
+    vertical-align: top;
+    text-align: right;
+    width: 50em;
+    max-width: 50%;
+    margin-right: 3em;
+}
+div.mspayline form {
+    display: block;
+    vertical-align: top;
+	margin:0 auto;
+}
+input.mshop_button {
+    @extend %button;
+    width: calc(100% - 20px);
+    line-height: 1.5em;
+}
+button.mshop_button {
+    @extend %button;
+    @include redGrad();
+    width: calc(100% - 20px);
+    line-height: 1.5em;
+}
+input.mshop_button:disabled {
+    opacity: 0.5;
+    border: none;
+    cursor: default;
+}
+input.buy_now_btn:disabled {
+    opacity: 0.5;
+    border: none;
+    cursor: default;
+}
+input.buy_now_btn {
+	border:0;
+	margin:0 auto;
+	text-align:center;
+}
+.ms_price_table{
+	background:#fff;
+	border-radius:3px;
+}
+.ms_price_table,
+.ms_price_table th,
+.ms_price_table td {
+    border-collapse: collapse;
+    border: 1px solid #E7E3E3;
+    padding: 8px;
+	margin:0 auto;
+}
+.ms_list_table {
+    border-collapse: collapse;
+    margin-top: 12px;
+    padding: 12px;
+}
+.ms_list_table tr {
+    border: 1px solid #E7E3E3;
+}
+.ms_list_table td {
+    padding: 5px;
+}
+tr.ms_prodsep {
+    border: none;
+}
+tr.ms_prodsep td {
+    padding-top: 2px;
+}
+tr.ms_prodsep span.ms_prodsep_name {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #4A7194;
+}
+.ms_form label {
+    display: inline-block;
+    width: 10em;
+    margin-right: 1em;
+}
+@media screen and (max-width: 500px) {
+    div.mspayline span {
+        display: block;
+        text-align: left;
+        max-width: 100%;
+    }
+    div.mspayline {
+        text-align: center;
+    }
+    td.mslt_icon {
+        display: none;
+    }
+    .ms_form label {
+        display: block;
+        text-align: left;
+        width: auto;
+        max-width: 90%;
+    }
+}
+.mshop .ms_panel {
+	padding:25px;
+	background:#fff;
+	border-radius:3px;
+	max-width: 600px;
+	margin:0 auto;
+}
+.ms_panel {
+    text-align: center;
+    background-color: transparent;
+    margin: 6px 0 6px 6px;
+}
+.ms_panel select {
+    margin: 0 auto;
+    width: auto;
+    display: block;
+    margin-bottom: 10px;
+    background-color: #f2f2f2;
+}
+.ms_panel select:focus {
+    background-color: #fff;
+}
+.ms_version {
+    margin-bottom: 15px;
+}
+.ms_message {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.ms_division {
+    clear: both;
+}
+.ms_product_name {
+    clear: both;
+    margin: 4px 0 4px 0;
+    font-size: 2em;
+    font-weight: bold;
+}
+.ms_version_heading {
+    display: block;
+    font: 12px verdana, arial, sans-serif;
+    letter-spacing: normal;
+    padding: 10px;
+}
+.ms_icon_heading {
+    display: inline;
+    vertical-align: text-bottom;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+.ms_pagination {
+    clear: both;
+    display: table;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+.ms_error {
+    font-weight: bold;
+    color: red;
+    margin: 5px 0 0 5px;
+}
+.ms_notok {
+    background: url('notok.gif') no-repeat left center;
+    min-height: 36px;
+    font-weight: bold;
+    margin: 20px 0 20px 5px;
+    padding-left: 48px;
+}
+.ms_ok {
+    background: url('ok.gif') no-repeat left center;
+    min-height: 36px;
+    font-weight: bold;
+    margin: 20px 0 20px 5px;
+    padding-left: 48px;
+}
+/* invoice */
+
+.ms_invoice_link {
+    text-align: center;
+    margin: 6px;
+}
+.ms_invoice_link span {
+    padding: 6px;
+    border: 2px solid #000080;
+}
+.ms_invoice {
+    font-family: Arial;
+}
+.ms_invoice h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #7E7C7C;
+    text-align: center;
+    margin: 0;
+}
+.ms_invoice h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #444444;
+}
+.ms_invoice table {
+    width: 100%;
+    border: 1px solid #444444;
+    border-collapse: collapse;
+}
+.ms_invoice table tr {
+    background-color: #FAFAFA;
+}
+.ms_invoice table th {
+    border: 1px solid #444444;
+    padding: 4px;
+}
+.ms_invoice table td {
+    border: 1px solid #444444;
+    padding: 4px;
+}

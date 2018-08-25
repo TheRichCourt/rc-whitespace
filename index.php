@@ -60,7 +60,6 @@ $doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css'.'?'.filemtime(
 
 <body>
 	<?php // if a header module's included, put a parallax bg on the header div
-	//var_dump($article);
 	$showTitleAtTop = false;
 
 	if ($bg_image != '') {
@@ -97,13 +96,6 @@ $doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css'.'?'.filemtime(
 			}?>
 		</div>
 		<?php } ?>
-
-		<?php if ($this->countModules('header') > 0 || (isset($images->image_intro) && $images->image_intro != '')) {
-			// echo '<svg class="headerSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
-			// 		<polygon points="100 0 100 10 0 10" fill="#f2f2f2"/>
-			// 	</svg>';
-		} ?>
-
 	</div>
 
 	<div id="wrapper">
