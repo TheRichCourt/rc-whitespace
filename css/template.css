@@ -1700,7 +1700,7 @@ div.changeable_icon_container div.changeable_menu_icon {
   left: 10%;
   -webkit-transform: rotate(0deg) translateZ(0);
           transform: rotate(0deg) translateZ(0);
-  background: #212121;
+  background: #ababab;
 }
 
 div.changeable_icon_container div.changeable_menu_icon::before {
@@ -1710,7 +1710,7 @@ div.changeable_icon_container div.changeable_menu_icon::before {
   left: 0;
   -webkit-transform: rotate(0deg) translateZ(0);
           transform: rotate(0deg) translateZ(0);
-  background: #212121;
+  background: #ababab;
 }
 
 div.changeable_icon_container div.changeable_menu_icon::after {
@@ -1720,7 +1720,7 @@ div.changeable_icon_container div.changeable_menu_icon::after {
   left: 0;
   -webkit-transform: rotate(0deg) translateZ(0);
           transform: rotate(0deg) translateZ(0);
-  background: #212121;
+  background: #ababab;
 }
 
 div.changeable_icon_container div.changeable_close_icon {
