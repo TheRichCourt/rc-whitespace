@@ -40,7 +40,7 @@ $doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css'.'?'.filemtime(
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto+Slab:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,700|Roboto+Slab:400,700" rel="stylesheet">
 	<?php if ($article->title == 'Together') { ?>
 		<style>
 			@font-face {
@@ -80,10 +80,14 @@ $doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css'.'?'.filemtime(
 
 	<div id="header" <?php echo $headerAttributes ?> >
 		<div id="overlay"></div>
-		<div id="menubutton" onclick="openDrawer()"><img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/img/menubutton.png" alt="Open menu" /></div>
+		<div id="menubutton">
+			<div class="changeable_icon_container">
+					<div class="changeable_icon changeable_menu_icon"></div>
+				</div>
+		</div>
 		<div id="menu">
-			<div id="closebutton" onclick="closeDrawer()">
-				<img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/img/closebutton.png" alt="Close menu" />
+			<div id="closebutton">
+				
 			</div>
 			<jdoc:include type="modules" name="menu" style="xhtml" />
 		</div>

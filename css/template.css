@@ -924,37 +924,6 @@ a.btn .icon-chevron-right {
     display: none !important;
     /* hidden by default */
   }
-  /*#menu ul li.deeper {
-		padding-right:20px;
-	}
-	#menu .expandbutton {
-		position:absolute;
-		right:0;
-		width:24px;
-		height:50px;
-		margin:0;
-		margin-right:5px;
-		padding:0;
-		cursor:pointer;
-	}
-	#menu .expandbutton:focus {
-		outline:0;
-	}
-	#menu .expandbuttoninner {
-		position:absolute;
-		right:0;
-		width:24px;
-		height:24px;
-		background:#545454 url('../img/expand.png') center no-repeat;
-		padding:0;
-		cursor:pointer;
-		border-radius:50px;
-		margin:13px 0;
-	}
-	#menu .expandbutton.flipped {
-		transform:rotate(180deg);
-	}
-	*/
 }
 
 @media (max-width: 769px) {
@@ -963,25 +932,10 @@ a.btn .icon-chevron-right {
   #menubutton {
     position: absolute;
     padding: 15px;
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
-    z-index: 997;
-  }
-  #menu.open #closebutton {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-  #closebutton {
-    padding: 15px;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    display: block;
-    -webkit-transition: -webkit-transform 0.56s ease;
-    transition: -webkit-transform 0.56s ease;
-    transition: transform 0.56s ease;
-    transition: transform 0.56s ease, -webkit-transform 0.56s ease;
+    z-index: 100000;
   }
   #menu {
     position: fixed;
@@ -1070,6 +1024,7 @@ a.btn .icon-chevron-right {
     margin: 0;
     width: calc(100% - 60px);
     font-size: 2em;
+    font-weight: 300;
     height: calc(100% - 30px);
     display: inline-block;
     color: #fff;
@@ -1088,7 +1043,7 @@ a.btn .icon-chevron-right {
     padding-left: 50px;
   }
   #menu ul li.current ul li a {
-    font-weight: normal;
+    font-weight: 300;
   }
   #menu ul li ul li a:before {
     content: "- ";
@@ -1699,5 +1654,99 @@ tr.ms_prodsep span.ms_prodsep_name {
 .ms_invoice table td {
   border: 1px solid #444444;
   padding: 4px;
+}
+
+div.changeable_icon_container {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  /* menu */
+  /* close */
+}
+
+div.changeable_icon_container div.changeable_icon {
+  background: #fff;
+  position: absolute;
+  -webkit-transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 1.5);
+  transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 1.5);
+  border-radius: 3px;
+}
+
+div.changeable_icon_container div.changeable_icon::before {
+  content: " ";
+  background: #fff;
+  position: absolute;
+  -webkit-transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 1.5);
+  transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 1.5);
+  border-radius: inherit;
+}
+
+div.changeable_icon_container div.changeable_icon::after {
+  content: " ";
+  background: #fff;
+  position: absolute;
+  border-radius: inherit;
+  -webkit-transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 1.5);
+  transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 1.5);
+}
+
+div.changeable_icon_container div.changeable_menu_icon {
+  width: 80%;
+  height: 10%;
+  top: 10%;
+  left: 10%;
+  -webkit-transform: rotate(0deg) translateZ(0);
+          transform: rotate(0deg) translateZ(0);
+  background: #212121;
+}
+
+div.changeable_icon_container div.changeable_menu_icon::before {
+  width: 100%;
+  height: 100%;
+  top: 250%;
+  left: 0;
+  -webkit-transform: rotate(0deg) translateZ(0);
+          transform: rotate(0deg) translateZ(0);
+  background: #212121;
+}
+
+div.changeable_icon_container div.changeable_menu_icon::after {
+  width: 100%;
+  height: 100%;
+  top: 525%;
+  left: 0;
+  -webkit-transform: rotate(0deg) translateZ(0);
+          transform: rotate(0deg) translateZ(0);
+  background: #212121;
+}
+
+div.changeable_icon_container div.changeable_close_icon {
+  width: 100%;
+  height: 10%;
+  -webkit-transform: rotate(45deg) translateZ(0);
+          transform: rotate(45deg) translateZ(0);
+  top: 40%;
+  left: 0;
+}
+
+div.changeable_icon_container div.changeable_close_icon::before {
+  width: 16%;
+  height: 80%;
+  -webkit-transform: rotate(-45deg) translateZ(0);
+          transform: rotate(-45deg) translateZ(0);
+  top: 40%;
+  left: 40%;
+}
+
+div.changeable_icon_container div.changeable_close_icon::after {
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0;
+  -webkit-transform: rotate(-90deg) translateZ(0);
+          transform: rotate(-90deg) translateZ(0);
 }
 /*# sourceMappingURL=template.css.map */

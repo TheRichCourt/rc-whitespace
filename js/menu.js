@@ -1,17 +1,14 @@
+var menuOpen = false;
+
 jQuery(document).ready(function(){
-    jQuery('<span class="expandbutton" tabindex="0"><span class="expandbuttoninner"></span></span>').prependTo('.deeper');
-    jQuery('.expandbutton').on('click', function(){
-        expand(this, false);
-    });
-//    jQuery('#menu .expandbutton').on('focusout', function(){
-//        expand(this, true);
-//    });
-    
-    jQuery('#overlay').on('click', function(){
-        closeDrawer();
-    });
-    jQuery('#menu li').each(function (i) {
-        jQuery(this).attr('tabindex', i + 1);
+    document.getElementById('menubutton').addEventListener('click', function () {
+        if (menuOpen) {
+            closeDrawer();
+            menuOpen = false;
+        } else {
+            openDrawer();
+            menuOpen = true;
+        }
     });
 });
 
@@ -28,11 +25,17 @@ function expand(expButton, closeOnly) {
 }
 function openDrawer() {
 	jQuery('#menu').addClass('open');
-	jQuery('#overlay').fadeIn(300);
+    jQuery('#overlay').fadeIn(300);
+
+    jQuery('#menu .changeable_icon')
+    document.querySelector('#menubutton .changeable_icon').classList.add('changeable_close_icon');
+    document.querySelector('#menubutton .changeable_icon').classList.remove('changeable_menu_icon');
 }
 
 function closeDrawer() {
 	jQuery('#menu').removeClass('open');
-	jQuery('#overlay').fadeOut(300);
+    jQuery('#overlay').fadeOut(300);
+    document.querySelector('#menubutton .changeable_icon').classList.remove('changeable_close_icon');
+    document.querySelector('#menubutton .changeable_icon').classList.add('changeable_menu_icon');
 }
 

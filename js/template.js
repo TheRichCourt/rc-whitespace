@@ -125,50 +125,6 @@
     jQuery('div.msgroup_intro').nestTags('<div class="msgroup_intro_wrapper">');
 })();
 
-var elements = document.querySelectorAll('.rc_skill_container');
-var firstFrameTime = Date.now();
-
-var firstTime = true;
-
-window.main = function () {
-    // window.requestAnimationFrame( main );
-    
-    // var oldX = 0;
-    // var oldY = 0;
-
-    // var positions = [];
-
-    // [].forEach.call(elements, function(element) {
-        
-    //     var speed = Math.random() * 5;
-
-    //     noise.seed(Math.random());
-
-    //     if (firstTime) {
-    //         oldX = Math.random();
-    //         oldY = Math.random();
-    //     } else {
-    //         oldX = element.getAttribute('x');
-    //         oldY = element.getAttribute('y');;
-    //     }
-        
-    //     let x = oldX + speed + Math.abs((noise.simplex3(oldX / 10, oldY / 10, (Date.now() / 10)) * 200));
-    //     let y = oldY + speed + Math.abs((noise.simplex3(oldY / 10, oldX / 10, (Date.now() / 10)) * 200));
-
-    //     element.style.setProperty('transform', 'translateZ(0) translateX(' + x + 'px)' + ' translateY(' + y + 'px)');
-
-    //     element.removeAttribute('x');
-    //     element.removeAttribute('x');
-    //     element.setAttribute('x', x);
-    //     element.setAttribute('y', y);   
-    // });
-
-    // firstTime = false;
-};
-
-main();
-
-
 currentSection = 1;
 
 function SectionsExist() {
