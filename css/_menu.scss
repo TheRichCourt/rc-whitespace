@@ -56,7 +56,7 @@
 		padding:0 15px;
 		margin:0;
 		display:inline-block;
-		color:#aaa;
+		color:#545454;
 		line-height:65px;
 	}
 	#menu ul li.current, #menu ul li.active {
@@ -133,39 +133,6 @@
 	#menu ul li ul li ul {
 		display:none !important;  /* hidden by default */
 	}
-	
-	/*#menu ul li.deeper {
-		padding-right:20px;
-	}
-	#menu .expandbutton {
-		position:absolute;
-		right:0;
-		width:24px;
-		height:50px;
-		margin:0;
-		margin-right:5px;
-		padding:0;
-		cursor:pointer;
-	}
-	#menu .expandbutton:focus {
-		outline:0;
-	}
-	#menu .expandbuttoninner {
-		position:absolute;
-		right:0;
-		width:24px;
-		height:24px;
-		background:#545454 url('../img/expand.png') center no-repeat;
-		padding:0;
-		cursor:pointer;
-		border-radius:50px;
-		margin:13px 0;
-	}
-	#menu .expandbutton.flipped {
-		transform:rotate(180deg);
-	}
-	*/
-	
 }
 
 @media (max-width: 769px) { /* mobile */
@@ -173,21 +140,10 @@
 	#menubutton {
 		position:absolute;
 		padding:15px;
-		width:24px;
-		height:24px;
+		width:30px;
+		height:30px;
 		cursor:pointer;
-		z-index:997;
-	}
-	#menu.open #closebutton {
-		transform:rotate(360deg);
-	}
-	#closebutton {
-		padding:15px;
-		width:24px;
-		height:24px;
-		cursor:pointer;
-		display:block;
-		transition:transform 0.56s ease;
+		z-index:100000;
 	}
 	#menu {
 		position:fixed;
@@ -260,6 +216,7 @@
 		margin:0;
 		width:calc(100% - 60px);
 		font-size:2em;
+		font-weight: 300;
 		height:calc(100% - 30px);
 		display:inline-block;	
 		color:#fff;
@@ -278,7 +235,7 @@
 		padding-left:50px;
 	}
 	#menu ul li.current ul li a {
-		font-weight:normal;
+		font-weight: 300;
 	}
 	#menu ul li ul li a:before {
 		content:"- ";

@@ -101,10 +101,6 @@ body.home {
         div.rc_onepage_slider p {
             max-width:450px;
         }
-        #menu {
-            position:fixed !important;
-            /*background:#212121 !important;*/
-        }
     }
 
     @media (max-width: 769px) { /* mobile */
@@ -135,9 +131,6 @@ body.home {
         }
         div.rc_onepage_slider img {
             max-width:80%;
-        }
-        div.rc_onepage_slider p {
-            max-width:450px;
         }
     }
     div.rc_skill_container {

@@ -1,4 +1,46 @@
 (function() {
+    jQuery.extend({
+        replaceTag: function (currentElem, newTagObj, keepProps) {
+            var $currentElem = jQuery(currentElem);
+            var i, $newTag = jQuery(newTagObj).clone();
+            if (keepProps) {//{{{
+                newTag = $newTag[0];
+                newTag.className = currentElem.className;
+                jQuery.extend(newTag.classList, currentElem.classList);
+                jQuery.extend(newTag.attributes, currentElem.attributes);
+            }//}}}
+            $currentElem.wrapAll($newTag);
+            $currentElem.parent().html($currentElem.attr('value'));
+            return this; // Suggested by ColeLawrence
+        }
+    });
+    
+    jQuery.fn.extend({
+        replaceTag: function (newTagObj, keepProps) {
+            return this.each(function() {
+                jQuery.replaceTag(this, newTagObj, keepProps);
+            });
+        }
+    });
+
+    jQuery.extend({
+        nestTags: function (currentElems, newTagObj, keepProps) {
+            var $currentElems = jQuery(currentElems);
+            var $newTag = jQuery(newTagObj).clone();
+            if (keepProps) {//{{{
+                newTag = $newTag[0];
+            }//}}}
+            $currentElems.wrapAll($newTag);
+            return this; // Suggested by ColeLawrence
+        }
+    });
+    
+    jQuery.fn.extend({
+        nestTags: function (newTagObj, keepProps) {
+            jQuery.nestTags(this, newTagObj, keepProps);
+        }
+    });
+    
     jQuery(document).scroll(function() {
         jQuery('.rc_onepage_slider, body.home #header').each(function() {
                 switchIfVisible(jQuery(this));
@@ -78,51 +120,10 @@
     });
 
     noise.seed(Math.random());
+
+    jQuery('input.mshop_button').replaceTag('<button class="mshop_button" type="submit">');
+    jQuery('div.msgroup_intro').nestTags('<div class="msgroup_intro_wrapper">');
 })();
-
-var elements = document.querySelectorAll('.rc_skill_container');
-var firstFrameTime = Date.now();
-
-var firstTime = true;
-
-window.main = function () {
-    // window.requestAnimationFrame( main );
-    
-    // var oldX = 0;
-    // var oldY = 0;
-
-    // var positions = [];
-
-    // [].forEach.call(elements, function(element) {
-        
-    //     var speed = Math.random() * 5;
-
-    //     noise.seed(Math.random());
-
-    //     if (firstTime) {
-    //         oldX = Math.random();
-    //         oldY = Math.random();
-    //     } else {
-    //         oldX = element.getAttribute('x');
-    //         oldY = element.getAttribute('y');;
-    //     }
-        
-    //     let x = oldX + speed + Math.abs((noise.simplex3(oldX / 10, oldY / 10, (Date.now() / 10)) * 200));
-    //     let y = oldY + speed + Math.abs((noise.simplex3(oldY / 10, oldX / 10, (Date.now() / 10)) * 200));
-
-    //     element.style.setProperty('transform', 'translateZ(0) translateX(' + x + 'px)' + ' translateY(' + y + 'px)');
-
-    //     element.removeAttribute('x');
-    //     element.removeAttribute('x');
-    //     element.setAttribute('x', x);
-    //     element.setAttribute('y', y);   
-    // });
-
-    // firstTime = false;
-};
-
-main();
-
 
 currentSection = 1;
 

@@ -1,0 +1,76 @@
+div.changeable_icon_container {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+
+    div.changeable_icon {
+        background:#fff;
+        position: absolute;
+        transition: all .28s cubic-bezier(.37,0,.14,1.5);
+        border-radius: 3px;
+    }
+    div.changeable_icon::before {
+        content: " ";
+        background:#fff;
+        position: absolute;
+        transition: all .28s cubic-bezier(.37,0,.14,1.5);
+        border-radius: inherit;
+    }
+    div.changeable_icon::after {
+        content: " ";
+        background:#fff;
+        position: absolute;
+        border-radius: inherit;
+        transition: all .28s cubic-bezier(.37,0,.14,1.5);
+    }
+    /* menu */
+    div.changeable_menu_icon {
+        width: 80%;
+        height: 10%;
+        top: 10%;
+        left: 10%;
+        transform: rotate(0deg) translateZ(0);
+        background: #212121;
+    }
+    div.changeable_menu_icon::before {
+        width: 100%;
+        height: 100%;
+        top:250%;
+        left: 0;
+        transform: rotate(0deg) translateZ(0);
+        background: #212121;
+    }
+    div.changeable_menu_icon::after {
+        width: 100%;
+        height: 100%;
+        top: 525%;
+        left: 0;
+        transform: rotate(0deg) translateZ(0);
+        background: #212121;
+    }
+    /* close */
+    div.changeable_close_icon {
+        width: 100%;
+        height: 10%;
+        transform: rotate(45deg) translateZ(0);
+        top: 40%;
+        left: 0;
+    }
+    div.changeable_close_icon::before {
+        width: 16%;
+        height: 80%;
+        transform: rotate(-45deg) translateZ(0);
+        top: 40%;
+        left: 40%;
+    }
+    div.changeable_close_icon::after {
+        width: 100%;
+        height: 100%;
+        top:0%;
+        left: 0;
+        transform: rotate(-90deg) translateZ(0);
+    }
+}
