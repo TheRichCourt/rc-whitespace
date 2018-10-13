@@ -138,12 +138,16 @@
 @media (max-width: 769px) { /* mobile */
 	/* slide out menu */
 	#menubutton {
-		position:absolute;
-		padding:15px;
-		width:30px;
-		height:30px;
-		cursor:pointer;
-		z-index:100000;
+		position: fixed;
+		padding: 10px;
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+		z-index: 100000;
+		margin: 5px;
+		border-radius: 100%;
+		background-color: #fff;
+		right: 0;
 	}
 	#menu {
 		position:fixed;

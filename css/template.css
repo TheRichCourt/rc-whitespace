@@ -930,12 +930,16 @@ a.btn .icon-chevron-right {
   /* mobile */
   /* slide out menu */
   #menubutton {
-    position: absolute;
-    padding: 15px;
+    position: fixed;
+    padding: 10px;
     width: 30px;
     height: 30px;
     cursor: pointer;
     z-index: 100000;
+    margin: 5px;
+    border-radius: 100%;
+    background-color: #fff;
+    right: 0;
   }
   #menu {
     position: fixed;
@@ -1657,18 +1661,19 @@ tr.ms_prodsep span.ms_prodsep_name {
 }
 
 div.changeable_icon_container {
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
   margin: auto;
   cursor: pointer;
   overflow: hidden;
   position: relative;
+  padding: 10px;
   /* menu */
   /* close */
 }
 
 div.changeable_icon_container div.changeable_icon {
-  background: #fff;
+  background: #212121;
   position: absolute;
   -webkit-transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 1.5);
   transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 1.5);
@@ -1677,7 +1682,7 @@ div.changeable_icon_container div.changeable_icon {
 
 div.changeable_icon_container div.changeable_icon::before {
   content: " ";
-  background: #fff;
+  background: #212121;
   position: absolute;
   -webkit-transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 1.5);
   transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 1.5);
@@ -1686,7 +1691,7 @@ div.changeable_icon_container div.changeable_icon::before {
 
 div.changeable_icon_container div.changeable_icon::after {
   content: " ";
-  background: #fff;
+  background: #212121;
   position: absolute;
   border-radius: inherit;
   -webkit-transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 1.5);
@@ -1696,11 +1701,11 @@ div.changeable_icon_container div.changeable_icon::after {
 div.changeable_icon_container div.changeable_menu_icon {
   width: 80%;
   height: 10%;
-  top: 10%;
+  top: 20%;
   left: 10%;
   -webkit-transform: rotate(0deg) translateZ(0);
           transform: rotate(0deg) translateZ(0);
-  background: #ababab;
+  background: #212121;
 }
 
 div.changeable_icon_container div.changeable_menu_icon::before {
@@ -1710,7 +1715,7 @@ div.changeable_icon_container div.changeable_menu_icon::before {
   left: 0;
   -webkit-transform: rotate(0deg) translateZ(0);
           transform: rotate(0deg) translateZ(0);
-  background: #ababab;
+  background: #212121;
 }
 
 div.changeable_icon_container div.changeable_menu_icon::after {
@@ -1720,7 +1725,7 @@ div.changeable_icon_container div.changeable_menu_icon::after {
   left: 0;
   -webkit-transform: rotate(0deg) translateZ(0);
           transform: rotate(0deg) translateZ(0);
-  background: #ababab;
+  background: #212121;
 }
 
 div.changeable_icon_container div.changeable_close_icon {
@@ -1728,7 +1733,7 @@ div.changeable_icon_container div.changeable_close_icon {
   height: 10%;
   -webkit-transform: rotate(45deg) translateZ(0);
           transform: rotate(45deg) translateZ(0);
-  top: 40%;
+  top: 42.5%;
   left: 0;
 }
 

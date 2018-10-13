@@ -78,17 +78,15 @@ $doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css'.'?'.filemtime(
 	}
 	?>
 
-	<div id="header" <?php echo $headerAttributes ?> >
-		<div id="overlay"></div>
-		<div id="menubutton">
-			<div class="changeable_icon_container">
-					<div class="changeable_icon changeable_menu_icon"></div>
-				</div>
-		</div>
-		<div id="menu">
-			<div id="closebutton">
-				
+	<div id="menubutton">
+		<div class="changeable_icon_container">
+				<div class="changeable_icon changeable_menu_icon"></div>
 			</div>
+	</div>
+	<div id="overlay"></div>
+
+	<div id="header" <?php echo $headerAttributes ?> >
+		<div id="menu">
 			<jdoc:include type="modules" name="menu" style="xhtml" />
 		</div>
 
