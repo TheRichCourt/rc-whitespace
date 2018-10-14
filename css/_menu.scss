@@ -7,27 +7,31 @@
 		padding:0;
 		background:transparent;
 		font-family: 'Roboto Condensed', sans-serif;
+		font-weight: bold;
 		text-transform:uppercase;
 		min-height:68px;
 	}
 	#menu * {
-		-webkit-transition:border 0.28s ease;
-		transition:border 0.28s ease;
-		-webkit-transition:color 0.28s ease;
-		transition:color 0.28s ease;
+		transition:
+			border 0.28s ease,
+			color 0.28s ease
+		;
 	}
 	#menu .moduletable {
 		display:inline-block;
 	}
 	a.menuhomelink {
-		-webkit-transition:background-color 0.28s ease !important;
 		transition:background-color 0.28s ease !important;		
-		max-height:62px;
+		// max-height:62px;
+
+		img {
+			display: inline-block;
+		}
 	}
 	a.menuhomelink:hover {
 		background:#32a8bd;
 	}
-	a.menuhomelink img {
+	#menu ul li a.menuhomelink img {
 		display:inline-block;
 		padding:0;
 		margin:0 auto;
@@ -58,13 +62,17 @@
 		display:inline-block;
 		color:#545454;
 		line-height:65px;
+		font-weight: bold;
+
+		img {
+			display: none;
+		}
 	}
 	#menu ul li.current, #menu ul li.active {
 		border-top:3px solid #BD4932;
 	}
 	
 	#menu ul li.current a {
-		font-weight:700;
 		color:#BD4932;
 	}
 	#menu ul li:hover a {
@@ -73,19 +81,23 @@
 
 	/* child menu items */	
 	#menu ul li ul {
-		display:none;
-		opacity:0;  /* hidden by default */
-		position:absolute;
-		-webkit-transition:all 0.28s ease;
-		transition:all 0.28s ease;
-		margin:0 auto;
-		z-index:9999;
-		min-width:250px;
-		border-radius:3px;
+		position: absolute;
+		transition:
+			transform 0.28s cubic-bezier(.37,0,.14,1.2),
+			opacity 0.28s ease
+		;
+		opacity: 0;
+		margin: 0 auto;
+		z-index: 9999;
+		border-radius: 3px;
+		overflow: hidden;
+		display: block;
+		min-width: 250px;
+		transform: scale(0) translateZ(0);
 	}
 	#menu ul li:hover ul {
-		display:block;
-		opacity:1;
+		opacity: 1;
+		transform: scale(1) translateZ(0);
 	}
 	#menu ul li ul li {
 		background:#212121;
@@ -150,34 +162,38 @@
 		right: 0;
 	}
 	#menu {
-		position:fixed;
-		width:0;
-		height:0;
+		position: fixed;
+		width: 0;
+		height: 0;
 		margin-left:0;
-		margin-top:0;
+		margin-top: 0;
 		@include blueGradRadial();
-		z-index:99999;
-		transition:all 0.28s ease-in;
-		overflow:hidden;
+		z-index: 99999;
+		transition: all 0.28s ease-in;
+		overflow: hidden;
 		font-family: 'Roboto Condensed', sans-serif;
-		text-transform:uppercase;
-		text-align:center;
-		border-radius:0 50vh 50vh 0;
-		transition:all 0.28s ease-out 0.28s,
-					border-radius 0.28s ease-in;
+		text-transform: uppercase;
+		text-align: center;
+		border-radius: 0 50vh 50vh 0;
+		transition:
+			all 0.28s ease-out 0.28s,
+			border-radius 0.28s ease-in
+		;
 		background-size: 300% 300%;
 		animation-name: rotateGrad;
 		animation-duration: 60s;
 		animation-iteration-count: infinite;
 	}
 	#menu.open {
-		margin-left:0;
-		margin-top:0;
-		width:100%;
-		height:100%;
-		border-radius:0px;
-		transition:all 0.28s ease-in,
-					border-radius 0.28s ease-out 0.28s;
+		margin-left: 0;
+		margin-top: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 0px;
+		transition:
+			all 0.28s ease-in,
+			border-radius 0.28s ease-out 0.28s
+		;
 	}
 	#overlay {
 		display:none;
@@ -196,14 +212,18 @@
 		padding:0;
 		opacity:0;
 		transform:translateX(-100vw);
-		transition:opacity 0.28s ease-in 0s,
-					transform 0.28s ease-in 0s;
+		transition:
+			opacity 0.28s ease-in 0s,
+			transform 0.28s ease-in 0s
+		;
 	}
 	#menu.open ul {
 		opacity:1;
 		transform:translateX(0);
-		transition:opacity 0.56s ease-out,
-				transform 0.56s ease-out;
+		transition:
+			opacity 0.56s ease-out,
+			transform 0.56s ease-out
+		;
 	}
 	#menu ul * {
 		-webkit-transition:all 0.28s ease;
@@ -212,19 +232,46 @@
 		max-width:80%;
 	}
 	#menu ul li {
-		list-style-type:none;
-		height:calc(20vh - 24px);
+		list-style-type: none;
+		display: inline-block;
+		width: 50%;
+
+		&.default {
+			display: block;
+			width: 100%;
+		}
 	}
 	#menu ul li a {
-		padding:15px 30px;
-		margin:0;
-		width:calc(100% - 60px);
-		font-size:2em;
+		padding: 15px;
+		margin: 0 auto;
+		font-size: 1.2em;
 		font-weight: 300;
-		height:calc(100% - 30px);
-		display:inline-block;	
-		color:#fff;
-		border-radius:300px;
+		display: inline-block;	
+		color: $white;
+		border-radius: 300px;
+
+		img {
+			display: block;
+			width: 50%;
+		}
+
+		&.menuhomelink {
+			width: 100%;
+
+			img {
+				height: auto;
+			}
+		}
+
+		span {
+			line-height: 1.2;
+			background-color: rgba(0, 0, 0, 0.2);
+			padding: 5px 10px;
+			display: block;
+			margin-top: 10px;
+			border-radius: 20px;
+			width: auto;
+		}
 	}
 	#menu ul li a:hover {
 		background:transparent;
