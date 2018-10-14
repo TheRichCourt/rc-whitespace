@@ -92,6 +92,7 @@
     color: #fff;
     @include blueGrad();
     border-radius: 20px;
+    border: none;
     min-width: 150px;
     text-align: center;
     box-shadow: 0 2px 15px #d2d2d2;
@@ -729,7 +730,6 @@ body.error {
 }
 
 button, input, textarea {
-    border: 2px solid #e2e2e2;
     font-family: inherit;
     padding: 5px;
 }
@@ -836,5 +836,6 @@ a.btn .icon-chevron-right {
 @import '_home.scss';
 @import '_mediashop.scss';
 @import '_changeable_icons.scss';
+@import '_flexicontactplus.scss';
 
 /*# sourceMappingURL=template.css.map */

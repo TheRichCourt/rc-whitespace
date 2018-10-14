@@ -122,6 +122,7 @@
     noise.seed(Math.random());
 
     jQuery('input.mshop_button').replaceTag('<button class="mshop_button" type="submit">');
+    jQuery('input#fcp_send_button').replaceTag('<button id="fcp_send_button" type="submit">');
     jQuery('div.msgroup_intro').nestTags('<div class="msgroup_intro_wrapper">');
 })();
 

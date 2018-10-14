@@ -1,0 +1,61 @@
+#fcp_wrapper {
+    @include redGrad();
+    color: $white;
+    
+    @media (min-width: 500px) {
+        width: calc(100% - 100px);
+        padding: 50px;
+        border-radius: 20px;
+    }
+
+    @media (max-width: 499px) {
+        width: 100%;
+        padding: 20px;
+        border-radius: 0px;
+        margin-left: -20px;
+        margin-right: -20px;
+        margin-bottom: 10px;
+    }
+
+    label {
+        font-size: 16px;
+        line-height: 1.1;
+        font-family: 'Roboto Condensed', 'Roboto', 'Arial', sans-serif;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    select, input:not([type="checkbox"]):not([type="submit"]), textarea {
+        background: rgba(255, 255, 255, .2);
+        border-radius: 3px;
+        border: none;
+        color: $white;
+        font-size: 18px;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    select option {
+        background: $white;
+        color: $text_colour;
+    }
+
+    button {
+        @extend %button;
+        box-shadow: none;
+    }
+
+    .g-recaptcha {
+        max-width: 100%;
+
+        div {
+            max-width: 100%;
+
+            iframe {
+                max-width: 100%;
+            }
+        }
+    }
+}
