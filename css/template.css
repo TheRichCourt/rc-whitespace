@@ -1789,6 +1789,14 @@ div.changeable_icon_container div.changeable_close_icon::after {
   font-weight: bold;
 }
 
+#fcp_wrapper label .fcp_focus {
+  color: #fff;
+}
+
+#fcp_wrapper div.fcp_line label.fcp_focus {
+  color: #fff;
+}
+
 #fcp_wrapper select, #fcp_wrapper input:not([type="checkbox"]):not([type="submit"]), #fcp_wrapper textarea {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 3px;
@@ -1798,6 +1806,13 @@ div.changeable_icon_container div.changeable_close_icon::after {
 }
 
 #fcp_wrapper select:focus, #fcp_wrapper input:not([type="checkbox"]):not([type="submit"]):focus, #fcp_wrapper textarea:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#fcp_wrapper select.fcp_error_field, #fcp_wrapper input:not([type="checkbox"]):not([type="submit"]).fcp_error_field, #fcp_wrapper textarea.fcp_error_field {
+  background: #fff !important;
+  color: #BD4932 !important;
   -webkit-box-shadow: none;
           box-shadow: none;
 }

@@ -23,7 +23,15 @@
         font-family: 'Roboto Condensed', 'Roboto', 'Arial', sans-serif;
         text-transform: uppercase;
         font-weight: bold;
+        
+        .fcp_focus {
+            color: $white;
+        }
     }
+
+    // meed to get this specific to override what's already there
+    div.fcp_line label.fcp_focus { color: $white;}
+
 
     select, input:not([type="checkbox"]):not([type="submit"]), textarea {
         background: rgba(255, 255, 255, .2);
@@ -33,6 +41,12 @@
         font-size: 18px;
 
         &:focus {
+            box-shadow: none;
+        }
+
+        &.fcp_error_field {
+            background: $white !important;
+            color: $red !important;
             box-shadow: none;
         }
     }
