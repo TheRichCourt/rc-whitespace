@@ -869,6 +869,12 @@ a.btn .icon-chevron-right {
   #menu ul li.current, #menu ul li.active {
     border-top: 3px solid #BD4932;
   }
+  #menu ul li.current .menuhomelink, #menu ul li.active .menuhomelink {
+    background: #32a8bd;
+    background: linear-gradient(135deg, #32a8bd 0%, #32bc6e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32a8bd', endColorstr='#32bc6e',GradientType=1 );
+    border-radius: 0 0 30px 0;
+  }
   #menu ul li.current a {
     color: #BD4932;
   }
