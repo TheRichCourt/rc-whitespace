@@ -7,7 +7,7 @@
   font-style: normal;
 }
 
-a.button, .button, .btn, button, input.mshop_button, button.mshop_button, #fcp_wrapper button {
+ul.pagenav li.next, ul.pagenav li.previous, a.button, .button, .btn, button, input.mshop_button, button.mshop_button, #fcp_wrapper button {
   display: inline-block;
   padding: 10px;
   color: #fff;
@@ -28,7 +28,7 @@ a.button, .button, .btn, button, input.mshop_button, button.mshop_button, #fcp_w
   overflow: hidden;
 }
 
-.button::before, .btn::before, button::before, input.mshop_button::before, button.mshop_button::before, #fcp_wrapper button::before {
+ul.pagenav li.next::before, ul.pagenav li.previous::before, .button::before, .btn::before, button::before, input.mshop_button::before, button.mshop_button::before, #fcp_wrapper button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -42,12 +42,12 @@ a.button, .button, .btn, button, input.mshop_button, button.mshop_button, #fcp_w
   transition: width .4s ease, height .4s ease, left .4s ease, top .4s ease, border-radius .4s ease, background-color .4s ease;
 }
 
-.button:hover, .btn:hover, button:hover, input.mshop_button:hover, #fcp_wrapper button:hover {
+ul.pagenav li.next:hover, ul.pagenav li.previous:hover, .button:hover, .btn:hover, button:hover, input.mshop_button:hover, #fcp_wrapper button:hover {
   color: #fff;
   cursor: pointer;
 }
 
-.button:hover::before, .btn:hover::before, button:hover::before, input.mshop_button:hover::before, #fcp_wrapper button:hover::before {
+ul.pagenav li.next:hover::before, ul.pagenav li.previous:hover::before, .button:hover::before, .btn:hover::before, button:hover::before, input.mshop_button:hover::before, #fcp_wrapper button:hover::before {
   top: calc(50% - 100px);
   left: 0;
   width: 100%;
@@ -602,12 +602,22 @@ ul.pagenav li {
   display: inline-block;
 }
 
-ul.pagenav li.next a:after {
-  content: "»";
+ul.pagenav li.next {
+  float: right;
+  min-width: auto;
+  width: auto;
 }
 
-ul.pagenav li.previous a:before {
-  content: "«";
+ul.pagenav li.next a {
+  color: #fff;
+}
+
+ul.pagenav li.previous {
+  min-width: auto;
+}
+
+ul.pagenav li.previous a {
+  color: #fff;
 }
 
 div.pagination ul {
@@ -1046,15 +1056,15 @@ a.btn .icon-chevron-right {
     color: #fff;
     border-radius: 300px;
   }
-  #menu ul li a img {
-    display: block;
-    width: 50%;
-  }
   #menu ul li a.menuhomelink {
     width: 100%;
   }
   #menu ul li a.menuhomelink img {
     height: auto;
+  }
+  #menu ul li a:not(.menuhomelink) img {
+    display: block;
+    width: 50%;
   }
   #menu ul li a span {
     line-height: 1.2;

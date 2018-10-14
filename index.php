@@ -40,18 +40,19 @@ $doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css'.'?'.filemtime(
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,700|Roboto+Slab:400,700" rel="stylesheet">
-	<?php if ($article->title == 'Together') { ?>
-		<style>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto+Slab:400,700" rel="stylesheet">
+	<?php if ($article->title == 'Together') { 
+		echo
+		'<style>
 			@font-face {
-				font-family: 'Indy Pimp';
-				src: url('font/indiepimptbs.ttf') format('truetype');
+				font-family: "Indy Pimp";
+				src: url(' . "{$this->baseurl}/templates/{$this->template}/font/indiepimptbs.ttf" . ') format("truetype");
 			}
 			#title h1, #title p, #header h1, div.category-desc h1, h1.page-header a, div.item-page div.page-header h2, span.subheading-category {
-				font-family: 'Indy Pimp', 'Roboto Slab', sans-serif;
+				font-family: "Indy Pimp", "Roboto Slab", sans-serif;
 			}
-		</style>
-	<?php }?>
+		</style>';
+	}?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="theme-color" content="#BD4932">
 	<link rel="shortcut icon" href="<?php echo $this->baseurl .'/templates/'.$this->template.'favicon.ico'?>" type="image/x-icon">

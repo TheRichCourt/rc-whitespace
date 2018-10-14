@@ -651,12 +651,24 @@ ul.pagenav li {
     display: inline-block;
 }
 
-ul.pagenav li.next a:after {
-    content: "»";
+ul.pagenav li.next {
+    @extend %button;
+    float: right;
+    min-width: auto;
+    width: auto;
+    
+    a {
+        color: $white;
+    }
 }
 
-ul.pagenav li.previous a:before {
-    content: "«";
+ul.pagenav li.previous {
+    @extend %button;
+    min-width: auto;
+
+    a {
+        color: $white;
+    }
 }
 
 div.pagination ul {

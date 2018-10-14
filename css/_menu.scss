@@ -250,16 +250,18 @@
 		color: $white;
 		border-radius: 300px;
 
-		img {
-			display: block;
-			width: 50%;
-		}
-
 		&.menuhomelink {
 			width: 100%;
 
 			img {
 				height: auto;
+			}
+		}
+
+		&:not(.menuhomelink) {
+			img {
+				display: block;
+				width: 50%;
 			}
 		}
 
