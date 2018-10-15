@@ -1,0 +1,44 @@
+body.error {
+    @include redGradRadial();
+    min-height: 100vh;
+    width: 100%;
+
+    #errorcontainer {
+        background: transparent;
+        width: 100%;
+
+        #error {
+            background: transparent;
+            box-shadow: none;
+            color: $white;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0;
+            max-width: 100%;
+            width: auto;
+
+            h1 {
+                text-align: center;
+                line-height: 1;
+                margin: 0;
+                
+                @media (max-width: 799px) {
+                    font-size: 5em;
+                }
+                
+                @media (min-width: 800px) {
+                    font-size: 15em;
+                }
+            }
+
+            h2 {
+                line-height: 1;
+            }
+
+            a {
+                @extend %button;
+                box-shadow: none;
+            }
+        }
+    }
+}

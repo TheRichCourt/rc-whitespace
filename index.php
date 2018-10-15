@@ -4,6 +4,7 @@
  * @copyright   Copyright (C) 2015 - 2018 Rich Court. All rights reserved.
  * @license     GNU General Public License version 2 or later
  */
+
 defined('_JEXEC') or die;
 
 $app             = JFactory::getApplication();
@@ -81,8 +82,8 @@ $doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css'.'?'.filemtime(
 
 	<div id="menubutton">
 		<div class="changeable_icon_container">
-				<div class="changeable_icon changeable_menu_icon"></div>
-			</div>
+			<div class="changeable_icon changeable_menu_icon"></div>
+		</div>
 	</div>
 	<div id="overlay"></div>
 
@@ -131,7 +132,7 @@ $doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css'.'?'.filemtime(
 	</div>
 
 	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/menu.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/menu.js')) ?>
-	<?=  createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/parallax.min.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/parallax.min.js')) ?>
+	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/parallax.min.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/parallax.min.js')) ?>
 	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/jquery.scrollify.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/jquery.scrollify.js')) ?>
 	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/noise.min.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/noise.min.js')) ?>
 	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/template.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/template.js')) ?>

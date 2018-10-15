@@ -7,7 +7,7 @@
   font-style: normal;
 }
 
-ul.pagenav li.next, ul.pagenav li.previous, a.button, .button, .btn, button, input.mshop_button, button.mshop_button, #fcp_wrapper button {
+ul.pagenav li.next, ul.pagenav li.previous, a.button, .button, .btn, button, input.mshop_button, button.mshop_button, #fcp_wrapper button, body.error #errorcontainer #error a {
   display: inline-block;
   padding: 10px;
   color: #fff;
@@ -28,7 +28,7 @@ ul.pagenav li.next, ul.pagenav li.previous, a.button, .button, .btn, button, inp
   overflow: hidden;
 }
 
-ul.pagenav li.next::before, ul.pagenav li.previous::before, .button::before, .btn::before, button::before, input.mshop_button::before, button.mshop_button::before, #fcp_wrapper button::before {
+ul.pagenav li.next::before, ul.pagenav li.previous::before, .button::before, .btn::before, button::before, input.mshop_button::before, button.mshop_button::before, #fcp_wrapper button::before, body.error #errorcontainer #error a::before {
   content: '';
   position: absolute;
   top: 0;
@@ -42,12 +42,12 @@ ul.pagenav li.next::before, ul.pagenav li.previous::before, .button::before, .bt
   transition: width .4s ease, height .4s ease, left .4s ease, top .4s ease, border-radius .4s ease, background-color .4s ease;
 }
 
-ul.pagenav li.next:hover, ul.pagenav li.previous:hover, .button:hover, .btn:hover, button:hover, input.mshop_button:hover, #fcp_wrapper button:hover {
+ul.pagenav li.next:hover, ul.pagenav li.previous:hover, .button:hover, .btn:hover, button:hover, input.mshop_button:hover, #fcp_wrapper button:hover, body.error #errorcontainer #error a:hover {
   color: #fff;
   cursor: pointer;
 }
 
-ul.pagenav li.next:hover::before, ul.pagenav li.previous:hover::before, .button:hover::before, .btn:hover::before, button:hover::before, input.mshop_button:hover::before, #fcp_wrapper button:hover::before {
+ul.pagenav li.next:hover::before, ul.pagenav li.previous:hover::before, .button:hover::before, .btn:hover::before, button:hover::before, input.mshop_button:hover::before, #fcp_wrapper button:hover::before, body.error #errorcontainer #error a:hover::before {
   top: calc(50% - 100px);
   left: 0;
   width: 100%;
@@ -1884,5 +1884,64 @@ div.changeable_icon_container div.changeable_close_icon::after {
 
 #fcp_wrapper .g-recaptcha div iframe {
   max-width: 100%;
+}
+
+body.error {
+  background: #bd4932;
+  background: radial-gradient(ellipse at center, #bc327c 0%, #bd4932 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bc327c', endColorstr='#bd4932',GradientType=1 );
+  -webkit-animation-name: rotateGrad;
+          animation-name: rotateGrad;
+  -webkit-animation-duration: 60s;
+          animation-duration: 60s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  background-size: 300% 300%;
+  min-height: 100vh;
+  width: 100%;
+}
+
+body.error #errorcontainer {
+  background: transparent;
+  width: 100%;
+}
+
+body.error #errorcontainer #error {
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 100%;
+  width: auto;
+}
+
+body.error #errorcontainer #error h1 {
+  text-align: center;
+  line-height: 1;
+  margin: 0;
+}
+
+@media (max-width: 799px) {
+  body.error #errorcontainer #error h1 {
+    font-size: 5em;
+  }
+}
+
+@media (min-width: 800px) {
+  body.error #errorcontainer #error h1 {
+    font-size: 15em;
+  }
+}
+
+body.error #errorcontainer #error h2 {
+  line-height: 1;
+}
+
+body.error #errorcontainer #error a {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 /*# sourceMappingURL=template.css.map */
