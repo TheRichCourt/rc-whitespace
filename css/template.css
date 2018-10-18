@@ -910,8 +910,6 @@ a.btn .icon-chevron-right {
     border: none !important;
     position: relative;
     border-radius: 0;
-    -webkit-transition: all 0.28s ease;
-    transition: all 0.28s ease;
   }
   #menu ul li ul li img {
     width: 16px;
@@ -921,11 +919,15 @@ a.btn .icon-chevron-right {
   #menu ul li ul li.active {
     border: none;
     border-left: #545454 solid 3px;
-    background: #BD4932;
+    background: #bd4932;
+    background: linear-gradient(135deg, #bd4932 0%, #bc327c 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd4932', endColorstr='#bc327c',GradientType=1 );
   }
   #menu ul li ul li:hover {
     border: none !important;
     background: #32a8bd;
+    background: linear-gradient(135deg, #32a8bd 0%, #32bc6e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32a8bd', endColorstr='#32bc6e',GradientType=1 );
   }
   #menu ul li ul li a {
     color: #ffffff !important;

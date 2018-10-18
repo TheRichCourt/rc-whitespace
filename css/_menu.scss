@@ -111,7 +111,6 @@
 		border:none !important;
 		position:relative;
 		border-radius:0;
-		transition:all 0.28s ease;
 	}
 	#menu ul li ul li img {
 		width:16px;
@@ -121,11 +120,11 @@
 	#menu ul li ul li.active {
 		border:none;
 		border-left:#545454 solid 3px;
-		background:#BD4932;
+		@include redGrad();
 	}
 	#menu ul li ul li:hover {
 		border:none !important;
-		background:#32a8bd;
+		@include blueGrad();
 	}
 	#menu ul li ul li a {
 		color:#ffffff !important;
