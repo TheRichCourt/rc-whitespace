@@ -36,10 +36,11 @@ $sitename = $app->get('sitename');
 
 <body class="error">
 	<div id="errorcontainer">
-		<div id="error">		
+		<div id="error">
 			<h1><?php echo $this->error->getCode() ?></h1>
 			<h2><?php echo "Sorry, this isn't a page.";?></h2>
-			<a class="home" href="<?php echo $this->baseurl; ?>/index.php" title="<?php echo JText::_('JERROR_LAYOUT_GO_TO_THE_HOME_PAGE'); ?>"><?php echo JText::_('JERROR_LAYOUT_HOME_PAGE'); ?></a></li>
+			<a class="home" href="<?php echo $this->baseurl; ?>/index.php" title="<?php echo JText::_('JERROR_LAYOUT_GO_TO_THE_HOME_PAGE'); ?>"><?php echo JText::_('JERROR_LAYOUT_HOME_PAGE'); ?></a>
+			<p><?php //echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8');?></p>
 		</div>
 	</div>
 </body>

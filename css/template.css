@@ -7,7 +7,7 @@
   font-style: normal;
 }
 
-ul.pagenav li.next, ul.pagenav li.previous, a.button, .button, .btn, button, input.mshop_button, button.mshop_button, #fcp_wrapper button, body.error #errorcontainer #error a {
+ul.pagenav li.next a, ul.pagenav li.previous a, a.button, .button, .btn, button, input.mshop_button, button.mshop_button, #fcp_wrapper button, body.error #errorcontainer #error a {
   display: inline-block;
   padding: 10px;
   color: #fff;
@@ -28,7 +28,7 @@ ul.pagenav li.next, ul.pagenav li.previous, a.button, .button, .btn, button, inp
   overflow: hidden;
 }
 
-ul.pagenav li.next::before, ul.pagenav li.previous::before, .button::before, .btn::before, button::before, input.mshop_button::before, button.mshop_button::before, #fcp_wrapper button::before, body.error #errorcontainer #error a::before {
+ul.pagenav li.next a::before, ul.pagenav li.previous a::before, .button::before, .btn::before, button::before, input.mshop_button::before, button.mshop_button::before, #fcp_wrapper button::before, body.error #errorcontainer #error a::before {
   content: '';
   position: absolute;
   top: 0;
@@ -42,12 +42,12 @@ ul.pagenav li.next::before, ul.pagenav li.previous::before, .button::before, .bt
   transition: width .4s ease, height .4s ease, left .4s ease, top .4s ease, border-radius .4s ease, background-color .4s ease;
 }
 
-ul.pagenav li.next:hover, ul.pagenav li.previous:hover, .button:hover, .btn:hover, button:hover, input.mshop_button:hover, #fcp_wrapper button:hover, body.error #errorcontainer #error a:hover {
+ul.pagenav li.next a:hover, ul.pagenav li.previous a:hover, .button:hover, .btn:hover, button:hover, input.mshop_button:hover, #fcp_wrapper button:hover, body.error #errorcontainer #error a:hover {
   color: #fff;
   cursor: pointer;
 }
 
-ul.pagenav li.next:hover::before, ul.pagenav li.previous:hover::before, .button:hover::before, .btn:hover::before, button:hover::before, input.mshop_button:hover::before, #fcp_wrapper button:hover::before, body.error #errorcontainer #error a:hover::before {
+ul.pagenav li.next a:hover::before, ul.pagenav li.previous a:hover::before, .button:hover::before, .btn:hover::before, button:hover::before, input.mshop_button:hover::before, #fcp_wrapper button:hover::before, body.error #errorcontainer #error a:hover::before {
   top: calc(50% - 100px);
   left: 0;
   width: 100%;
@@ -441,19 +441,9 @@ div.category-desc {
   margin-bottom: 150px;
 }
 
-@media (max-width: 499px) {
-  #header h1, div.category-desc h1, h1.page-header a, div.item-page div.page-header h2, span.subheading-category {
-    font-family: "Roboto Slab", sans-serif;
-    font-size: 36px;
-    line-height: 36px;
-  }
-}
-
-@media (min-width: 500px) {
-  #header h1, div.category-desc h1, h1.page-header a, div.item-page div.page-header h2, span.subheading-category {
-    font-size: 72px;
-    line-height: 72px;
-  }
+#header h1, div.category-desc h1, h1.page-header a, div.item-page div.page-header h2, span.subheading-category {
+  font-size: 72px;
+  line-height: 72px;
 }
 
 h2.entry-title a, h2.name {
@@ -604,19 +594,16 @@ ul.pagenav li {
 
 ul.pagenav li.next {
   float: right;
-  min-width: auto;
-  width: auto;
 }
 
 ul.pagenav li.next a {
+  min-width: auto;
+  width: auto;
   color: #fff;
 }
 
-ul.pagenav li.previous {
-  min-width: auto;
-}
-
 ul.pagenav li.previous a {
+  min-width: auto;
   color: #fff;
 }
 

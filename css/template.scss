@@ -493,19 +493,9 @@ div.category-desc {
     margin-bottom: 150px;
 }
 
-@media (max-width: 499px) {
-    #header h1, div.category-desc h1, h1.page-header a, div.item-page div.page-header h2, span.subheading-category {
-        font-family: $font_headings;
-        font-size: 36px;
-        line-height: 36px;
-    }
-}
-
-@media (min-width: 500px) {
-    #header h1, div.category-desc h1, h1.page-header a, div.item-page div.page-header h2, span.subheading-category {
-        font-size: 72px;
-        line-height: 72px;
-    }
+#header h1, div.category-desc h1, h1.page-header a, div.item-page div.page-header h2, span.subheading-category {
+    font-size: 72px;
+    line-height: 72px;
 }
 
 h2.entry-title a, h2.name {
@@ -652,23 +642,20 @@ ul.pagenav li {
 }
 
 ul.pagenav li.next {
-    @extend %button;
     float: right;
-    min-width: auto;
-    width: auto;
-    
+
     a {
+        min-width: auto;
+        width: auto;
+        @extend %button;
         color: $white;
     }
 }
 
-ul.pagenav li.previous {
+ul.pagenav li.previous a {
     @extend %button;
     min-width: auto;
-
-    a {
-        color: $white;
-    }
+    color: $white;
 }
 
 div.pagination ul {
@@ -850,5 +837,5 @@ a.btn .icon-chevron-right {
 @import '_changeable_icons.scss';
 @import '_flexicontactplus.scss';
 @import '_error_page.scss';
- 
+
 /*# sourceMappingURL=template.css.map */
