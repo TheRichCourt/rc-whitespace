@@ -556,13 +556,18 @@ h2.entry-title a, h2.name {
 
 @media (min-width: 768px) {
     #content div.columns, #features .feature {
-        max-width: calc(31% - 40px);
-        margin: 0 1.8% 20px 0;
+        max-width: calc((100% / 3) - 10px);
+        margin: 0 15px 15px 0;
         vertical-align: top;
         display: inline-block;
         background: #e2e2e2;
         padding: 0 20px;
         border-radius: 3px;
+        box-sizing: border-box;
+
+        &:nth-of-type(3) {
+            margin: 0 0 15px 0;
+        }
     }
 }
 

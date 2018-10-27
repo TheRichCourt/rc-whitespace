@@ -21,7 +21,7 @@
 		display:inline-block;
 	}
 	a.menuhomelink {
-		transition:background-color 0.28s ease !important;		
+		transition:background-color 0.28s ease !important;
 		// max-height:62px;
 
 		img {
@@ -55,7 +55,7 @@
 	#menu ul li:hover {
 		border-top:3px solid #32a8bd !important;
 	}
-	
+
 	#menu ul li a {
 		padding:0 15px;
 		margin:0;
@@ -76,7 +76,7 @@
 			border-radius:0 0 30px 0;
 		}
 	}
-	
+
 	#menu ul li.current a {
 		color:#BD4932;
 	}
@@ -84,7 +84,7 @@
 		color:#32a8bd;
 	}
 
-	/* child menu items */	
+	/* child menu items */
 	#menu ul li ul {
 		position: absolute;
 		transition:
@@ -133,15 +133,15 @@
 		border-bottom:0 !important;
 		width:calc(100% - 30px);
 	}
-	#menu ul li ul li.current a {	
+	#menu ul li ul li.current a {
 		border-bottom:0 !important;
 		color:#212121;
 		font-weight:bold;
 	}
-	#menu ul li ul li:hover a {	
+	#menu ul li ul li:hover a {
 		border-bottom:0;
 	}
-	
+
 	#menu ul li.expanded ul {
 		display:none;
 	}
@@ -159,7 +159,7 @@
 		width: 30px;
 		height: 30px;
 		cursor: pointer;
-		z-index: 100000;
+		z-index: 999;
 		margin: 5px;
 		border-radius: 100%;
 		background-color: #fff;
@@ -172,7 +172,7 @@
 		margin-left:0;
 		margin-top: 0;
 		@include blueGradRadial();
-		z-index: 99999;
+		z-index: 998;
 		transition: all 0.28s ease-in;
 		overflow: hidden;
 		font-family: 'Roboto Condensed', sans-serif;
@@ -208,7 +208,7 @@
 		width:110%;
 		margin:0;
 		padding:0;
-		z-index:99998;
+		z-index:997;
 		overflow:hidden;
 	}
 	#menu ul {
@@ -250,7 +250,7 @@
 		margin: 0 auto;
 		font-size: 1.2em;
 		font-weight: 300;
-		display: inline-block;	
+		display: inline-block;
 		color: $white;
 		border-radius: 300px;
 

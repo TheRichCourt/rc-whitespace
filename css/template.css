@@ -507,13 +507,18 @@ h2.entry-title a, h2.name {
 
 @media (min-width: 768px) {
   #content div.columns, #features .feature {
-    max-width: calc(31% - 40px);
-    margin: 0 1.8% 20px 0;
+    max-width: calc((100% / 3) - 10px);
+    margin: 0 15px 15px 0;
     vertical-align: top;
     display: inline-block;
     background: #e2e2e2;
     padding: 0 20px;
     border-radius: 3px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  #content div.columns:nth-of-type(3), #features .feature:nth-of-type(3) {
+    margin: 0 0 15px 0;
   }
 }
 
@@ -949,7 +954,7 @@ a.btn .icon-chevron-right {
     width: 30px;
     height: 30px;
     cursor: pointer;
-    z-index: 100000;
+    z-index: 999;
     margin: 5px;
     border-radius: 100%;
     background-color: #fff;
@@ -971,7 +976,7 @@ a.btn .icon-chevron-right {
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
     background-size: 300% 300%;
-    z-index: 99999;
+    z-index: 998;
     -webkit-transition: all 0.28s ease-in;
     transition: all 0.28s ease-in;
     overflow: hidden;
@@ -1004,7 +1009,7 @@ a.btn .icon-chevron-right {
     width: 110%;
     margin: 0;
     padding: 0;
-    z-index: 99998;
+    z-index: 997;
     overflow: hidden;
   }
   #menu ul {
