@@ -517,7 +517,7 @@ h2.entry-title a, h2.name {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
-  #content div.columns:nth-of-type(3), #features .feature:nth-of-type(3) {
+  #content div.columns:nth-of-type(3), #content div.columns:nth-of-type(6), #content div.columns:nth-of-type(9), #content div.columns:nth-of-type(12), #features .feature:nth-of-type(3), #features .feature:nth-of-type(6), #features .feature:nth-of-type(9), #features .feature:nth-of-type(12) {
     margin: 0 0 15px 0;
   }
 }
@@ -637,7 +637,7 @@ div.pagination ul li.pagination-prev > *:before {
 }
 
 #footer {
-  background: #e2e2e2;
+  background: transparent;
   width: calc(100% - 60px);
   padding: 30px;
   color: #aaa;

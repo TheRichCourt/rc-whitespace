@@ -565,7 +565,7 @@ h2.entry-title a, h2.name {
         border-radius: 3px;
         box-sizing: border-box;
 
-        &:nth-of-type(3) {
+        &:nth-of-type(3), &:nth-of-type(6), &:nth-of-type(9), &:nth-of-type(12) {
             margin: 0 0 15px 0;
         }
     }
@@ -688,7 +688,7 @@ div.pagination ul li.pagination-prev > *:before {
 }
 
 #footer {
-    background: #e2e2e2;
+    background: transparent;
     width: calc(100% - 60px);
     padding: 30px;
     color: #aaa;
