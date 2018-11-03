@@ -1880,6 +1880,53 @@ div.changeable_icon_container div.changeable_close_icon::after {
   max-width: 100%;
 }
 
+.blogportfolio {
+  text-align: center;
+}
+
+.blogportfolio .cols-1 {
+  width: 600px;
+  display: inline-block;
+  margin: 20px;
+  text-align: left;
+}
+
+.blogportfolio .cols-1 .span12 {
+  margin: 0;
+}
+
+.blogportfolio .cols-1 .page-header h2 {
+  margin: 5px;
+  width: 100%;
+}
+
+.blogportfolio .cols-1 .page-header h2 a {
+  line-height: 1.5;
+  color: #545454;
+  display: block;
+}
+
+.blogportfolio .cols-1 .item-image {
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.blogportfolio .cols-1 .item-image img {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.56s ease;
+  transition: -webkit-transform 0.56s ease;
+  transition: transform 0.56s ease;
+  transition: transform 0.56s ease, -webkit-transform 0.56s ease;
+  display: block;
+  background-color: #000;
+}
+
+.blogportfolio .cols-1:hover img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
 body.error {
   background: #bd4932;
   background: radial-gradient(ellipse at center, #bc327c 0%, #bd4932 100%);
