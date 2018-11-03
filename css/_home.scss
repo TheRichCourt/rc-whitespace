@@ -1,29 +1,10 @@
 body.home {
-    #fullpage {
-        .rc_onepage_section {
-            &.yellow {
-                @include yellowGradRadial();
-            }
-            &.red {
-                @include redGradRadial();
-            }
-            &.blue {
-                @include blueGradRadial();
-            }
-            &.green {
-                @include greenGradRadial();
-            }
-        }
-    }
-    #header {
-        @include redGradRadial();
-    }
     a {
-        color: #fff;
+        color: $red;
         font-weight: bold;
     }
     a:hover {
-        color: #212121;
+        color: $blue;
     }
 
     [class^="icon-"], [class*=" icon-"] {
@@ -48,8 +29,7 @@ body.home {
         content: "\eab0";
     }
 
-    body {padding:0; margin:0; background:#151515;}
-    #wrapper {background:#151515;}
+    body {padding:0; margin:0;}
     #contentwrapper, #footer {
         display:none;
     }
@@ -134,33 +114,34 @@ body.home {
         }
     }
     div.rc_skill_container {
-        display:inline-block;
-        max-width:100%;
-        width:120px;
-        height:120px;
-        background:#ffffff10;
-        padding:10px;
-        border-radius:65px;
-        transition:all .28s cubic-bezier(.37,0,.14,2);
+        display: inline-block;
+        max-width: 100%;
+        width: 120px;
+        height: 120px;
+        @include redGrad();
+        padding: 10px;
+        border-radius: 75px;
+        transition: transform .1s ease-out;
         margin: 10px;
-        position:relative;
+        position: relative;
         transform: translateZ(0) translateX(var(--animation-x)) translateY(var(--animation-y));
-    }
-    img.rc_skill {
-        width:80px;
-        height:80px;
-        position:absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        margin: auto;
-    }
-    div.rc_skill_container {
+        box-shadow: 0 0 15px #000;
+
+        img.rc_skill {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+
         &:hover {
-            transform:scale(1.5,1.5) rotate(5deg);
-            background:#fff;
-            transition:all .28s cubic-bezier(.37,0,.14,5);
+            transform: scale(1.25,1.25) rotate(5deg);
+            transition: transform .4s cubic-bezier(.37,0,.14,5);
+            z-index: 2;
         }
     }
 }

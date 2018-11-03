@@ -70,11 +70,6 @@
 	}
 	#menu ul li.current, #menu ul li.active {
 		border-top:3px solid #BD4932;
-
-		.menuhomelink {
-			@include blueGrad();
-			border-radius:0 0 30px 0;
-		}
 	}
 
 	#menu ul li.current a {

@@ -267,7 +267,6 @@ img.scrollicon {
 
 #mod1 {
   width: 100%;
-  background: #f2f2f2;
 }
 
 #mod2 {
@@ -861,12 +860,6 @@ a.btn .icon-chevron-right {
   #menu ul li.current, #menu ul li.active {
     border-top: 3px solid #BD4932;
   }
-  #menu ul li.current .menuhomelink, #menu ul li.active .menuhomelink {
-    background: #32a8bd;
-    background: linear-gradient(135deg, #32a8bd 0%, #32bc6e 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32a8bd', endColorstr='#32bc6e',GradientType=1 );
-    border-radius: 0 0 30px 0;
-  }
   #menu ul li.current a {
     color: #BD4932;
   }
@@ -1130,78 +1123,13 @@ a.btn .icon-chevron-right {
   }
 }
 
-body.home #fullpage .rc_onepage_section.yellow {
-  background: #32a8bd;
-  background: radial-gradient(ellipse at center, #d83a45 0%, #dba43a 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d83a45', endColorstr='#dba43a',GradientType=1 );
-  -webkit-animation-name: rotateGrad;
-          animation-name: rotateGrad;
-  -webkit-animation-duration: 60s;
-          animation-duration: 60s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  background-size: 300% 300%;
-}
-
-body.home #fullpage .rc_onepage_section.red {
-  background: #bd4932;
-  background: radial-gradient(ellipse at center, #bc327c 0%, #bd4932 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bc327c', endColorstr='#bd4932',GradientType=1 );
-  -webkit-animation-name: rotateGrad;
-          animation-name: rotateGrad;
-  -webkit-animation-duration: 60s;
-          animation-duration: 60s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  background-size: 300% 300%;
-}
-
-body.home #fullpage .rc_onepage_section.blue {
-  background: #32a8bd;
-  background: radial-gradient(ellipse at center, #32bc6e 0%, #32a8bd 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32bc6e', endColorstr='#32a8bd',GradientType=1 );
-  -webkit-animation-name: rotateGrad;
-          animation-name: rotateGrad;
-  -webkit-animation-duration: 60s;
-          animation-duration: 60s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  background-size: 300% 300%;
-}
-
-body.home #fullpage .rc_onepage_section.green {
-  background: #32a8bd;
-  background: radial-gradient(ellipse at center, #d83a45 0%, #dba43a 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d83a45', endColorstr='#dba43a',GradientType=1 );
-  -webkit-animation-name: rotateGrad;
-          animation-name: rotateGrad;
-  -webkit-animation-duration: 60s;
-          animation-duration: 60s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  background-size: 300% 300%;
-}
-
-body.home #header {
-  background: #bd4932;
-  background: radial-gradient(ellipse at center, #bc327c 0%, #bd4932 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bc327c', endColorstr='#bd4932',GradientType=1 );
-  -webkit-animation-name: rotateGrad;
-          animation-name: rotateGrad;
-  -webkit-animation-duration: 60s;
-          animation-duration: 60s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  background-size: 300% 300%;
-}
-
 body.home a {
-  color: #fff;
+  color: #BD4932;
   font-weight: bold;
 }
 
 body.home a:hover {
-  color: #212121;
+  color: #32a8bd;
 }
 
 body.home [class^="icon-"], body.home [class*=" icon-"] {
@@ -1229,11 +1157,6 @@ body.home .icon-github:before {
 body.home body {
   padding: 0;
   margin: 0;
-  background: #151515;
-}
-
-body.home #wrapper {
-  background: #151515;
 }
 
 body.home #contentwrapper, body.home #footer {
@@ -1343,18 +1266,24 @@ body.home div.rc_skill_container {
   max-width: 100%;
   width: 120px;
   height: 120px;
-  background: #ffffff10;
+  background: #bd4932;
+  background: linear-gradient(135deg, #bd4932 0%, #bc327c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bd4932', endColorstr='#bc327c',GradientType=1 );
   padding: 10px;
-  border-radius: 65px;
-  -webkit-transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 2);
-  transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 2);
+  border-radius: 75px;
+  -webkit-transition: -webkit-transform .1s ease-out;
+  transition: -webkit-transform .1s ease-out;
+  transition: transform .1s ease-out;
+  transition: transform .1s ease-out, -webkit-transform .1s ease-out;
   margin: 10px;
   position: relative;
   -webkit-transform: translateZ(0) translateX(var(--animation-x)) translateY(var(--animation-y));
           transform: translateZ(0) translateX(var(--animation-x)) translateY(var(--animation-y));
+  -webkit-box-shadow: 0 0 15px #000;
+          box-shadow: 0 0 15px #000;
 }
 
-body.home img.rc_skill {
+body.home div.rc_skill_container img.rc_skill {
   width: 80px;
   height: 80px;
   position: absolute;
@@ -1366,11 +1295,13 @@ body.home img.rc_skill {
 }
 
 body.home div.rc_skill_container:hover {
-  -webkit-transform: scale(1.5, 1.5) rotate(5deg);
-          transform: scale(1.5, 1.5) rotate(5deg);
-  background: #fff;
-  -webkit-transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 5);
-  transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 5);
+  -webkit-transform: scale(1.25, 1.25) rotate(5deg);
+          transform: scale(1.25, 1.25) rotate(5deg);
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.37, 0, 0.14, 5);
+  transition: -webkit-transform 0.4s cubic-bezier(0.37, 0, 0.14, 5);
+  transition: transform 0.4s cubic-bezier(0.37, 0, 0.14, 5);
+  transition: transform 0.4s cubic-bezier(0.37, 0, 0.14, 5), -webkit-transform 0.4s cubic-bezier(0.37, 0, 0.14, 5);
+  z-index: 2;
 }
 
 div.mshop {
@@ -1878,6 +1809,53 @@ div.changeable_icon_container div.changeable_close_icon::after {
 
 #fcp_wrapper .g-recaptcha div iframe {
   max-width: 100%;
+}
+
+.blogportfolio {
+  text-align: center;
+}
+
+.blogportfolio .cols-1 {
+  width: 600px;
+  display: inline-block;
+  margin: 20px;
+  text-align: left;
+}
+
+.blogportfolio .cols-1 .span12 {
+  margin: 0;
+}
+
+.blogportfolio .cols-1 .page-header h2 {
+  margin: 5px;
+  width: 100%;
+}
+
+.blogportfolio .cols-1 .page-header h2 a {
+  line-height: 1.5;
+  color: #545454;
+  display: block;
+}
+
+.blogportfolio .cols-1 .item-image {
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.blogportfolio .cols-1 .item-image img {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.56s ease;
+  transition: -webkit-transform 0.56s ease;
+  transition: transform 0.56s ease;
+  transition: transform 0.56s ease, -webkit-transform 0.56s ease;
+  display: block;
+  background-color: #000;
+}
+
+.blogportfolio .cols-1:hover img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 body.error {

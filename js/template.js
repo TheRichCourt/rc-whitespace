@@ -14,7 +14,7 @@
             return this; // Suggested by ColeLawrence
         }
     });
-    
+
     jQuery.fn.extend({
         replaceTag: function (newTagObj, keepProps) {
             return this.each(function() {
@@ -34,13 +34,13 @@
             return this; // Suggested by ColeLawrence
         }
     });
-    
+
     jQuery.fn.extend({
         nestTags: function (newTagObj, keepProps) {
             jQuery.nestTags(this, newTagObj, keepProps);
         }
     });
-    
+
     jQuery(document).scroll(function() {
         jQuery('.rc_onepage_slider, body.home #header').each(function() {
                 switchIfVisible(jQuery(this));
@@ -68,34 +68,6 @@
             return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
     };
 
-    //one page layout sections, except on mobile
-    jQuery.scrollify({
-        section : ".rc_onepage_section, .extendedheader",
-        updateHash: false
-    });
-
-    setTimeout(function() {
-        if (!mobileCheck()) {
-            jQuery.scrollify({
-                section : ".rc_onepage_section, .extendedheader",
-                updateHash: false
-            });
-        }
-        if(mobileCheck()) {
-            jQuery.scrollify.disable();
-        }
-    }, 1000);
-
-    if(mobileCheck()) {
-        jQuery.scrollify.disable();
-    }
-
-    jQuery(window).resize(function() {
-        if (!mobileCheck()) {
-            jQuery.scrollify.update();
-        }
-    });
-
     //smooth scroll for anchor links
     jQuery('a[href*="#"]:not([href="#"])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -118,8 +90,6 @@
             SwitchIfVisible(jQuery(this));
         });
     });
-
-    noise.seed(Math.random());
 
     jQuery('input.mshop_button').replaceTag('<button class="mshop_button" type="submit">');
     jQuery('input#fcp_send_button').replaceTag('<button id="fcp_send_button" type="submit">');
@@ -156,4 +126,3 @@ jQuery.fn.visible = function(partial) {
 
     return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
 };
-

@@ -133,8 +133,6 @@ $doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css'.'?'.filemtime(
 
 	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/menu.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/menu.js')) ?>
 	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/parallax.min.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/parallax.min.js')) ?>
-	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/jquery.scrollify.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/jquery.scrollify.js')) ?>
-	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/noise.min.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/noise.min.js')) ?>
 	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/template.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/template.js')) ?>
 </body>
 </html>
