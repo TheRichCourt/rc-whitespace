@@ -475,6 +475,26 @@ h2.entry-title a, h2.name {
   }
 }
 
+@media (min-width: 500px) {
+  #content img.lead {
+    width: 100%;
+    /*width:calc(100% + 100px);
+         max-width:calc(100% + 100px);
+         margin-left:-50px;
+         margin-right:-50px;*/
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: -webkit-transform 0.28s ease;
+    transition: -webkit-transform 0.28s ease;
+    transition: transform 0.28s ease;
+    transition: transform 0.28s ease, -webkit-transform 0.28s ease;
+  }
+  #content img.lead:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
 #features, #addons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1886,9 +1906,15 @@ div.changeable_icon_container div.changeable_close_icon::after {
 
 .blogportfolio .cols-1 {
   width: 600px;
+  max-width: 100%;
   display: inline-block;
-  margin: 20px;
   text-align: left;
+}
+
+@media (min-width: 500px) {
+  .blogportfolio .cols-1 {
+    padding: 20px;
+  }
 }
 
 .blogportfolio .cols-1 .span12 {
