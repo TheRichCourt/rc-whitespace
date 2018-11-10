@@ -28,10 +28,15 @@
 	</positions>
 	<config>
 		<fields name="params">
-			<fieldset name="advanced" label="Customise">			
+			<fieldset name="advanced" label="Customise">
 				<field name="header_bg_image" class="" type="media" default=""
 					label="Banner BG"
 					description="This will be used as the background for the header as long as at least one module is included there. This works best on the front page of your site, for example." />
+				<field name="bodyclass" type="text"
+					default=""
+					label="Body class"
+					description="e.g. 'product'"
+				/>
 			</fieldset>
 		</fields>
 	</config>

@@ -18,6 +18,7 @@ JHtml::_('jquery.framework');
 // Getting params from template
 $params = $app->getTemplate(true)->params;
 $bg_image = $params->get('header_bg_image', '');
+$bodyClass = $params->get('bodyclass', '');
 
 // Detecting Active Variables
 $option   = $app->input->getCmd('option', '');
@@ -42,7 +43,7 @@ $doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css'.'?'.filemtime(
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto+Slab:400,700" rel="stylesheet">
-	<?php if ($article->title == 'Together') { 
+	<?php if ($article->title == 'Together') {
 		echo
 		'<style>
 			@font-face {
@@ -60,7 +61,7 @@ $doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css'.'?'.filemtime(
 	<jdoc:include type="head" />
 </head>
 
-<body>
+<body class="<?php if ($bodyClass !== "") { echo $bodyClass; }?>">
 	<?php // if a header module's included, put a parallax bg on the header div
 	$showTitleAtTop = false;
 

@@ -429,6 +429,31 @@ ul.breadcrumb li {
   }
 }
 
+@media (min-width: 1660px) {
+  body.product section.product_intro {
+    position: fixed;
+    left: 0;
+    width: 500px;
+    top: 0;
+    padding: 0 50px;
+    padding-top: 74px;
+    background-color: #fff;
+    height: calc(100% - 74px);
+  }
+  body.product #header {
+    z-index: 2;
+    position: fixed;
+  }
+  body.product #wrapper {
+    margin-left: 600px;
+    width: calc(100% - 600px);
+  }
+  body.product #footer {
+    margin-left: 600px;
+    width: calc(100% - 660px);
+  }
+}
+
 article, .span6, .span12 {
   margin-bottom: 100px;
 }
