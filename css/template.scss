@@ -405,6 +405,14 @@ ul.breadcrumb li {
     background: $bg;
 }
 
+.blog {
+    section.product_intro {
+        .page-header {
+            display: none;
+        }
+    }
+}
+
 @media (max-width: 499px) {
     #content {
         margin: 0 auto;
