@@ -17,6 +17,27 @@ body.home {
     }
     #header {
         @include redGradRadial();
+        overflow: hidden;
+    }
+    @media (max-width: 1000px) {
+        .rc_crazytext {
+            width: 100%;
+            h1 {
+                font-family: 'Roboto', Arial, sans-serif;
+                font-size: 4em !important;
+                text-align: left;
+            }
+        }
+    }
+    @media (min-width: 1000px) {
+        .rc_crazytext {
+            width: 100%;
+            h1 {
+                font-family: 'Roboto', Arial, sans-serif;
+                font-size: 7em !important;
+                text-align: left;
+            }
+        }
     }
     a {
         color: #fff;
@@ -35,8 +56,6 @@ body.home {
         font-variant: normal;
         text-transform: none;
         line-height: 1;
-
-        /* Better Font Rendering =========== */
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
@@ -161,6 +180,27 @@ body.home {
             transform:scale(1.5,1.5) rotate(5deg);
             background:#fff;
             transition:all .28s cubic-bezier(.37,0,.14,5);
+        }
+    }
+
+    .anim {
+        perspective: 750px;
+        position: absolute;
+        height: auto;
+        width: 80vw;
+        left: 10vw;
+        top: 10vh;
+
+        svg {
+            transform:
+                rotateY(-45deg)
+                rotateX(45deg)
+                translateX(45px)
+                translateY(45px)
+            ;
+            transform-style: preserve-3d;
+            opacity: 0.1;
+            max-width: 100%;
         }
     }
 }

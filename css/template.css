@@ -433,7 +433,14 @@ ul.breadcrumb li {
   }
 }
 
+#graph_container {
+  display: none;
+}
+
 @media (min-width: 1660px) {
+  #graph_container {
+    display: block;
+  }
   body.product section.product_intro {
     position: fixed;
     left: 0;
@@ -911,10 +918,8 @@ a.btn .icon-chevron-right {
     border-top: 3px solid #BD4932;
   }
   #menu ul li.current .menuhomelink, #menu ul li.active .menuhomelink {
-    background: #32a8bd;
-    background: linear-gradient(135deg, #32a8bd 0%, #32bc6e 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32a8bd', endColorstr='#32bc6e',GradientType=1 );
-    border-radius: 0 0 30px 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0 0 10px 0;
   }
   #menu ul li.current a {
     color: #BD4932;
@@ -1242,6 +1247,29 @@ body.home #header {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   background-size: 300% 300%;
+  overflow: hidden;
+}
+
+@media (max-width: 1000px) {
+  body.home .rc_crazytext {
+    width: 100%;
+  }
+  body.home .rc_crazytext h1 {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 4em !important;
+    text-align: left;
+  }
+}
+
+@media (min-width: 1000px) {
+  body.home .rc_crazytext {
+    width: 100%;
+  }
+  body.home .rc_crazytext h1 {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 7em !important;
+    text-align: left;
+  }
 }
 
 body.home a {
@@ -1262,7 +1290,6 @@ body.home [class^="icon-"], body.home [class*=" icon-"] {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1420,6 +1447,25 @@ body.home div.rc_skill_container:hover {
   background: #fff;
   -webkit-transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 5);
   transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 5);
+}
+
+body.home .anim {
+  -webkit-perspective: 750px;
+          perspective: 750px;
+  position: absolute;
+  height: auto;
+  width: 80vw;
+  left: 10vw;
+  top: 10vh;
+}
+
+body.home .anim svg {
+  -webkit-transform: rotateY(-45deg) rotateX(45deg) translateX(45px) translateY(45px);
+          transform: rotateY(-45deg) rotateX(45deg) translateX(45px) translateY(45px);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  opacity: 0.1;
+  max-width: 100%;
 }
 
 div.mshop {

@@ -489,7 +489,14 @@ ul.breadcrumb li {
     }
 }
 
+#graph_container {
+    display: none;
+}
+
 @media (min-width: 1660px) {
+    #graph_container {
+        display: block;
+    }
     body.product {
         section.product_intro {
             position: fixed;

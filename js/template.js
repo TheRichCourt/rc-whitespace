@@ -14,7 +14,7 @@
             return this; // Suggested by ColeLawrence
         }
     });
-    
+
     jQuery.fn.extend({
         replaceTag: function (newTagObj, keepProps) {
             return this.each(function() {
@@ -34,13 +34,13 @@
             return this; // Suggested by ColeLawrence
         }
     });
-    
+
     jQuery.fn.extend({
         nestTags: function (newTagObj, keepProps) {
             jQuery.nestTags(this, newTagObj, keepProps);
         }
     });
-    
+
     jQuery(document).scroll(function() {
         jQuery('.rc_onepage_slider, body.home #header').each(function() {
                 switchIfVisible(jQuery(this));
@@ -156,4 +156,3 @@ jQuery.fn.visible = function(partial) {
 
     return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
 };
-
