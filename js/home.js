@@ -31,10 +31,6 @@ var ThreeDLogo = function (logoElem) {
             requestAnimationFrame(function () {
                 threeDLogo.tilt();
             });
-
-            // setInterval(function () {
-            //     threeDLogo.tilt();
-            // }, frameLength);
         },
 
         tilt: function () {
