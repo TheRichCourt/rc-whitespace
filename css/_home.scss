@@ -22,6 +22,7 @@ body.home {
     @media (max-width: 1000px) {
         .rc_crazytext {
             width: 100%;
+            text-shadow: none;
             h1 {
                 font-family: 'Roboto', Arial, sans-serif;
                 font-size: 4em !important;
@@ -32,6 +33,7 @@ body.home {
     @media (min-width: 1000px) {
         .rc_crazytext {
             width: 100%;
+            text-shadow: none;
             h1 {
                 font-family: 'Roboto', Arial, sans-serif;
                 font-size: 7em !important;
@@ -157,13 +159,25 @@ body.home {
         max-width: 100%;
         width: 120px;
         height: 120px;
-        background: #ffffff10;
+        background-color: #ffffff10;
         padding: 10px;
         border-radius: 100%;
-        transition: all .28s cubic-bezier(.37,0,.14,2);
+        transition:
+            transform .28s ease,
+            background-color .14s linear
+        ;
         margin: 10px;
         position: relative;
         transform: translateZ(0) translateX(var(--animation-x)) translateY(var(--animation-y));
+
+        &:hover {
+            transform:scale(1.5,1.5) rotate(5deg);
+            background-color:#fff;
+            transition:
+            transform .28s cubic-bezier(.37,0,.14,5),
+                background-color .28s linear
+            ;
+        }
     }
     img.rc_skill {
         width:80px;
@@ -174,13 +188,6 @@ body.home {
         bottom: 0;
         right: 0;
         margin: auto;
-    }
-    div.rc_skill_container {
-        &:hover {
-            transform:scale(1.5,1.5) rotate(5deg);
-            background:#fff;
-            transition:all .28s cubic-bezier(.37,0,.14,5);
-        }
     }
 
     .anim {

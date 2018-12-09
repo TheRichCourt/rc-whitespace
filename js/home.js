@@ -1,8 +1,12 @@
 /*global window, jQuery, document, setInterval*/
 jQuery().ready(function () {
     "use strict";
-    var threeDLogo = new ThreeDLogo(document.querySelector(".anim svg"));
-    threeDLogo.setUp();
+    var logoElem = document.querySelector(".anim svg");
+
+    if (logoElem) {
+        var threeDLogo = new ThreeDLogo(document.querySelector(".anim svg"));
+        threeDLogo.setUp();
+    }
 });
 
 var ThreeDLogo = function (logoElem) {
@@ -24,13 +28,18 @@ var ThreeDLogo = function (logoElem) {
                 }
             });
 
-            setInterval(function () {
-                console.log(1);
+            requestAnimationFrame(function () {
                 threeDLogo.tilt();
-            }, frameLength);
+            });
+
+            // setInterval(function () {
+            //     threeDLogo.tilt();
+            // }, frameLength);
         },
 
         tilt: function () {
+            var threeDLogo = this;
+
             current.x = this.lerp(current.x, target.x, 0.04);
             current.y = this.lerp(current.y, target.y, 0.04);
 
@@ -41,6 +50,10 @@ var ThreeDLogo = function (logoElem) {
             newTransform += " translateY(" + -current.y + "px)";
 
             logoElem.style.transform = newTransform;
+
+            requestAnimationFrame(function () {
+                threeDLogo.tilt()
+            });
         },
 
         lerp: function (start, end, amount) {

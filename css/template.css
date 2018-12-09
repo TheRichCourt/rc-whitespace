@@ -1253,6 +1253,7 @@ body.home #header {
 @media (max-width: 1000px) {
   body.home .rc_crazytext {
     width: 100%;
+    text-shadow: none;
   }
   body.home .rc_crazytext h1 {
     font-family: 'Roboto', Arial, sans-serif;
@@ -1264,6 +1265,7 @@ body.home #header {
 @media (min-width: 1000px) {
   body.home .rc_crazytext {
     width: 100%;
+    text-shadow: none;
   }
   body.home .rc_crazytext h1 {
     font-family: 'Roboto', Arial, sans-serif;
@@ -1419,15 +1421,27 @@ body.home div.rc_skill_container {
   max-width: 100%;
   width: 120px;
   height: 120px;
-  background: #ffffff10;
+  background-color: #ffffff10;
   padding: 10px;
   border-radius: 100%;
-  -webkit-transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 2);
-  transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 2);
+  -webkit-transition: background-color .14s linear, -webkit-transform .28s ease;
+  transition: background-color .14s linear, -webkit-transform .28s ease;
+  transition: transform .28s ease, background-color .14s linear;
+  transition: transform .28s ease, background-color .14s linear, -webkit-transform .28s ease;
   margin: 10px;
   position: relative;
   -webkit-transform: translateZ(0) translateX(var(--animation-x)) translateY(var(--animation-y));
           transform: translateZ(0) translateX(var(--animation-x)) translateY(var(--animation-y));
+}
+
+body.home div.rc_skill_container:hover {
+  -webkit-transform: scale(1.5, 1.5) rotate(5deg);
+          transform: scale(1.5, 1.5) rotate(5deg);
+  background-color: #fff;
+  -webkit-transition: background-color 0.28s linear, -webkit-transform 0.28s cubic-bezier(0.37, 0, 0.14, 5);
+  transition: background-color 0.28s linear, -webkit-transform 0.28s cubic-bezier(0.37, 0, 0.14, 5);
+  transition: transform 0.28s cubic-bezier(0.37, 0, 0.14, 5), background-color 0.28s linear;
+  transition: transform 0.28s cubic-bezier(0.37, 0, 0.14, 5), background-color 0.28s linear, -webkit-transform 0.28s cubic-bezier(0.37, 0, 0.14, 5);
 }
 
 body.home img.rc_skill {
@@ -1439,14 +1453,6 @@ body.home img.rc_skill {
   bottom: 0;
   right: 0;
   margin: auto;
-}
-
-body.home div.rc_skill_container:hover {
-  -webkit-transform: scale(1.5, 1.5) rotate(5deg);
-          transform: scale(1.5, 1.5) rotate(5deg);
-  background: #fff;
-  -webkit-transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 5);
-  transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 5);
 }
 
 body.home .anim {
