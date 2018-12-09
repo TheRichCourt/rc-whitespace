@@ -1,0 +1,21 @@
+<updates>
+	<update>
+		<name>RC Justified Gallery</name>
+		<description>One of the best looking and easiest to use image galleries for Joomla! Built around a beautiful and modern responsive design.</description>
+		<element>rc_gallery</element>
+		<type>plugin</type>
+		<folder>content</folder>
+		<version>4.0.6</version>
+		<client>0</client>
+		<infourl title="RC Justified Gallery">http://therichcourt.com/</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">http://therichcourt.com/downloads/plg_rc_gallery_v4.0.6.zip</downloadurl>
+		</downloads>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<maintainer>Rich Court</maintainer>
+		<maintainerurl>http://therichcourt.com</maintainerurl>
+		<targetplatform name="joomla" version="3.*"/>
+	</update>
+ </updates>

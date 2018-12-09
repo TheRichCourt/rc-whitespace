@@ -1421,7 +1421,7 @@ body.home div.rc_skill_container {
   height: 120px;
   background: #ffffff10;
   padding: 10px;
-  border-radius: 65px;
+  border-radius: 100%;
   -webkit-transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 2);
   transition: all 0.28s cubic-bezier(0.37, 0, 0.14, 2);
   margin: 10px;
