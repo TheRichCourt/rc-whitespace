@@ -1463,6 +1463,7 @@ body.home .anim {
   width: 80vw;
   left: 10vw;
   top: 10vh;
+  pointer-events: none;
 }
 
 body.home .anim svg {
