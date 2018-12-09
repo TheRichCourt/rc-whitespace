@@ -15,7 +15,6 @@ var ThreeDLogo = function (logoElem) {
     var maxRotation = 90;
     var current = {x: -maxRotation / 2, y: -maxRotation / 2};
     var target = {x: -maxRotation / 2, y: -maxRotation / 2};
-    var frameLength = 1000 / 60;
 
     return {
         setUp: function () {
