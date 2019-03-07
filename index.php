@@ -35,8 +35,6 @@ $images = json_decode($article->images);
 
 // Add Stylesheets
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/template.css'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/css/template.css'));
-// $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/menu.css'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/css/menu.css'));
-$doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css'.'?'.filemtime(JPATH_ROOT.'/media/jui/css/icomoon.css'));
 
 ?>
 <!DOCTYPE html>
@@ -58,6 +56,7 @@ $doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css'.'?'.filemtime(
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="theme-color" content="#BD4932">
 	<link rel="shortcut icon" href="<?php echo $this->baseurl .'/templates/'.$this->template.'favicon.ico'?>" type="image/x-icon">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<jdoc:include type="head" />
 </head>
 
@@ -132,6 +131,7 @@ $doc->addStyleSheet($this->baseurl . '/media/jui/css/icomoon.css'.'?'.filemtime(
 		</div>
 	</div>
 
+	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/transitions.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/transitions.js')) ?>
 	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/menu.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/menu.js')) ?>
 	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/parallax.min.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/parallax.min.js')) ?>
 	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/jquery.scrollify.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/jquery.scrollify.js')) ?>

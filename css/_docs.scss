@@ -1,0 +1,27 @@
+table.rc_table {
+    width: 100%;
+    box-shadow: 0 2px 30px #d2d2d2;
+    border: none;
+
+    thead {
+        @include redGrad();
+        color: $white;
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+
+    tbody {
+        tr {
+            td {
+                &:nth-child(1),
+                &:nth-child(3) {
+                    text-align: center;
+                }
+
+                background-color: $white;
+                padding: 0 20px;
+            }
+        }
+    }
+}
