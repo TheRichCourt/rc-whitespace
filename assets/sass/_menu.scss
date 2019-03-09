@@ -35,7 +35,6 @@
 		display:inline-block;
 		padding:0;
 		margin:0 auto;
-		-webkit-transition:all 0.28s ease;
 		transition:all 0.28s ease;
 	}
 	#menu ul {
@@ -48,7 +47,6 @@
 		list-style-type:none;
 		position:relative;
 		border-top:3px solid transparent;
-		-webkit-transition:border-top 0.28s ease;
 		transition:border-top 0.28s ease;
 		top:0;
 	}
@@ -230,7 +228,6 @@
 		;
 	}
 	#menu ul * {
-		-webkit-transition:all 0.28s ease;
 		transition:all 0.28s ease;
 		margin:0 auto;
 		max-width:80%;
@@ -322,7 +319,7 @@
 		right:0;
 		width:30px;
 		height:30px;
-		background:#e2e2e2 url('../img/expand.png') center no-repeat;
+		background:#e2e2e2 url('../../img/expand.png') center no-repeat;
 		padding:0;
 		cursor:pointer;
 		border-radius:50px;
