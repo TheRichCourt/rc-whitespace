@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BabelMinifyPlugin = require("babel-minify-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const WatchTimePlugin = require('webpack-watch-time-plugin');
+const Autoprefixer = require('autoprefixer');
 
 var buildConfig = (dev) => {
     console.log("Dev: ", dev);
@@ -75,6 +76,10 @@ var buildConfig = (dev) => {
                         {
                             loader: 'sass-loader',
                             options: {
+                                ident: 'postcss',
+                                plugins: [
+                                    new Autoprefixer()
+                                ],
                                 sourceMap: dev
                             }
                         }

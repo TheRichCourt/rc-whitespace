@@ -49,26 +49,6 @@ body.home {
         color: #212121;
     }
 
-    [class^="icon-"], [class*=" icon-"] {
-        /* use !important to prevent issues with browser extensions that change fonts */
-        font-family: 'icomoon' !important;
-        speak: none;
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-
-    .icon-twitter:before {
-        content: "\ea96";
-    }
-    .icon-github:before {
-        content: "\eab0";
-    }
-
     body {padding:0; margin:0; background:#151515;}
     #wrapper {background:#151515;}
     #contentwrapper, #footer {
