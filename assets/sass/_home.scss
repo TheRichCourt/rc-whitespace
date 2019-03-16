@@ -16,7 +16,9 @@ body.home {
         }
     }
     #header {
-        @include redGradRadial();
+        // @include redGradRadial();
+        background: #212121;
+        background: radial-gradient(#252525 0%,#000 100%);
         overflow: hidden;
     }
     @media (max-width: 1000px) {
@@ -47,26 +49,6 @@ body.home {
     }
     a:hover {
         color: #212121;
-    }
-
-    [class^="icon-"], [class*=" icon-"] {
-        /* use !important to prevent issues with browser extensions that change fonts */
-        font-family: 'icomoon' !important;
-        speak: none;
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-
-    .icon-twitter:before {
-        content: "\ea96";
-    }
-    .icon-github:before {
-        content: "\eab0";
     }
 
     body {padding:0; margin:0; background:#151515;}
@@ -207,7 +189,7 @@ body.home {
                 translateY(45px)
             ;
             transform-style: preserve-3d;
-            opacity: 0.1;
+            opacity: .05;
             max-width: 100%;
         }
     }

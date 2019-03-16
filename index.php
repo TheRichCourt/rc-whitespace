@@ -34,7 +34,15 @@ $article->load($id);
 $images = json_decode($article->images);
 
 // Add Stylesheets
-$doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/template.css'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/css/template.css'));
+$doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/dist/template.css'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/dist/template.css'));
+
+$menu = $app->getMenu();
+
+// additional class to show this is the homepage
+$bodyClass .= $menu->getActive() == $menu->getDefault()
+	? ' home'
+	: ''
+;
 
 ?>
 <!DOCTYPE html>
@@ -131,13 +139,7 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/tem
 		</div>
 	</div>
 
-	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/transitions.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/transitions.js')) ?>
-	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/menu.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/menu.js')) ?>
-	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/parallax.min.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/parallax.min.js')) ?>
-	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/jquery.scrollify.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/jquery.scrollify.js')) ?>
-	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/noise.min.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/noise.min.js')) ?>
-	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/template.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/template.js')) ?>
-	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/js/home.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/js/home.js')) ?>
+	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/dist/template.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/dist/template.js')) ?>
 </body>
 </html>
 <?php
