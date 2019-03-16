@@ -1,5 +1,3 @@
-// require('./parallax');
-// require('./jquery.scrollify_UNCOMPRESSED');
 require('jquery-scrollify');
 require('jquery-parallax.js');
 import Menu from './Menu';
@@ -12,14 +10,6 @@ import LegacyTransitions from './LegacyTransitions';
 // Override some layout form TP extensions that can't be changed at source
 var overrides = new Overrides();
 overrides.override();
-
-// 3D logo thingy
-var logoElem = document.querySelector(".anim svg");
-
-if (logoElem) {
-    var threeDLogo = new ThreeDLogo(document.querySelector(".anim svg"));
-    threeDLogo.setUp();
-}
 
 // The menu
 var menuOpen = false;
@@ -39,16 +29,6 @@ document.getElementById('menubutton').addEventListener('click', function () {
 var transitions = new Transitions();
 transitions.setUp();
 
-// Homepage scrolling
-jQuery.scrollify({
-    section : ".rc_onepage_section, .extendedheader",
-    updateHash: false
-});
-
-jQuery(window).resize(function() {
-    jQuery.scrollify.update();
-});
-
 // Homepage legacy transitions
 var legacyTransitions = new LegacyTransitions();
 legacyTransitions.watch();
@@ -56,6 +36,31 @@ legacyTransitions.watch();
 // Smooth scrolling to anchors
 var smoothScrollAnchors = new SmoothScrollAnchors();
 smoothScrollAnchors.setUp();
+
+// Homepage scrolling
+if (document.body.classList.contains("home")) {
+    jQuery.scrollify({
+        section : ".rc_onepage_section, .extendedheader",
+        updateHash: false
+    });
+
+    window.addEventListener("resize", function () {
+        jQuery.scrollify.update();
+    });
+
+    // void window.getComputedStyle(document.body).height; // To update the computed style
+    window.requestAnimationFrame(function () {
+        jQuery.scrollify.update();
+    });
+
+    // 3D logo thingy
+    var logoElem = document.querySelector(".anim svg");
+
+    if (logoElem) {
+        var threeDLogo = new ThreeDLogo(document.querySelector(".anim svg"));
+        threeDLogo.setUp();
+    }
+}
 
 // Load the SASS
 require('../sass/template.scss');

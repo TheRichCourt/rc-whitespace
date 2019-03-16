@@ -36,6 +36,14 @@ $images = json_decode($article->images);
 // Add Stylesheets
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/dist/template.css'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/dist/template.css'));
 
+$menu = $app->getMenu();
+
+// additional class to show this is the homepage
+$bodyClass .= $menu->getActive() == $menu->getDefault()
+	? ' home'
+	: ''
+;
+
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">

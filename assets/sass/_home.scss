@@ -16,7 +16,9 @@ body.home {
         }
     }
     #header {
-        @include redGradRadial();
+        // @include redGradRadial();
+        background: #212121;
+        background: radial-gradient(#252525 0%,#000 100%);
         overflow: hidden;
     }
     @media (max-width: 1000px) {
@@ -187,7 +189,7 @@ body.home {
                 translateY(45px)
             ;
             transform-style: preserve-3d;
-            opacity: 0.1;
+            opacity: .05;
             max-width: 100%;
         }
     }

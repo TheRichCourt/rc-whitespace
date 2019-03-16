@@ -2,6 +2,7 @@
 	#menubutton, #closebutton, #overlay {
 		display:none;
 	}
+
 	#menu {
 		margin:0;
 		padding:0;
@@ -11,29 +12,31 @@
 		text-transform:uppercase;
 		min-height:68px;
 	}
+
 	#menu * {
 		transition:
 			border 0.28s ease,
 			color 0.28s ease
 		;
 	}
+
 	#menu .moduletable {
 		display:inline-block;
 	}
+
 	a.menuhomelink {
 		transition:background-color 0.28s ease !important;
 		// max-height:62px;
 
 		img {
 			display: inline-block;
+			width: 50px;
+			padding-top: 14px;
 		}
 	}
-	a.menuhomelink:hover {
-		background:#32a8bd;
-	}
+
 	#menu ul li a.menuhomelink img {
 		display:inline-block;
-		padding:0;
 		margin:0 auto;
 		transition:all 0.28s ease;
 	}
@@ -42,16 +45,29 @@
 		padding:0;
 	}
 	#menu ul li {
-		display:inline-block;
-		vertical-align:top;
-		list-style-type:none;
-		position:relative;
-		border-top:3px solid transparent;
-		transition:border-top 0.28s ease;
-		top:0;
+		display: inline-block;
+		vertical-align: top;
+		list-style-type: none;
+		position: relative;
+		transition: border-top 0.28s ease;
+		top: 0;
+
+		&::before {
+			content: "";
+			position: absolute;
+			width: 0%;
+			margin-left: 50%;
+			height: 3px;
+			transition: margin .28s ease, width .28s ease;
+			@include blueGrad();
+		}
 	}
 	#menu ul li:hover {
-		border-top:3px solid #32a8bd !important;
+		&::before {
+			content: "";
+			margin-left: 0;
+			width: 100%;
+		}
 	}
 
 	#menu ul li a {
@@ -67,19 +83,15 @@
 		}
 	}
 	#menu ul li.current, #menu ul li.active {
-		border-top:3px solid #BD4932;
-
-		.menuhomelink {
-			background-color: rgba(255, 255, 255, 0.2);
-			border-radius:0 0 10px 0;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			margin-left: 0%;
+			height: 3px;
+			transition: margin .28s ease, width .28s ease;
+			@include redGrad();
 		}
-	}
-
-	#menu ul li.current a {
-		color:#BD4932;
-	}
-	#menu ul li:hover a {
-		color:#32a8bd;
 	}
 
 	/* child menu items */
@@ -109,6 +121,10 @@
 		border:none !important;
 		position:relative;
 		border-radius:0;
+
+		&::before {
+			display: none;
+		}
 	}
 	#menu ul li ul li img {
 		width:16px;
