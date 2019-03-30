@@ -1,0 +1,29 @@
+$dark_bg: #212121;
+$dark_card_bg: #313131;
+$dark_text_color: #fff;
+
+body * {
+    transition: color .28s linear;
+}
+
+body.dark {
+    background-color: $dark_bg;
+    color: $dark_text_color;
+
+    #menu ul li a,
+    .blogportfolio .cols-1 .page-header h2 a {
+        color: $dark_text_color;
+    }
+
+    #contentwrapper {
+        background-color: $dark_bg;
+    }
+
+    ul.breadcrumb,
+    #content div.columns,
+    #features div.feature,
+    div.cols-2 div.span6,
+    &.product section.product_intro {
+        background-color: $dark_card_bg;
+    }
+}

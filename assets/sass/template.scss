@@ -87,7 +87,7 @@
     border: none;
     min-width: 150px;
     text-align: center;
-    box-shadow: 0 2px 15px #d2d2d2;
+    // box-shadow: 0 2px 15px #d2d2d2;
     transition: all 0.2s ease;
     font-weight: bold;
     font-size: 16px;
@@ -376,7 +376,7 @@ ul.breadcrumb li {
         display: inline-block;
         float: left;
         border-radius: 3px;
-        box-shadow: 0 2px 15px #e2e2e2;
+        // box-shadow: 0 2px 15px #e2e2e2;
         background: #fff;
         text-align: center;
     }
@@ -395,7 +395,7 @@ ul.breadcrumb li {
         display: inline-block;
         float: left;
         border-radius: 3px;
-        box-shadow: 0 2px 15px #e2e2e2;
+        // box-shadow: 0 2px 15px #e2e2e2;
         background: #fff;
         text-align: center;
     }
@@ -819,4 +819,5 @@ a.btn .icon-chevron-right {
 @import '_error_page.scss';
 @import '_category_page_transitions.scss';
 @import '_docs.scss';
+@import '_dark_theme.scss';
 /*# sourceMappingURL=template.css.map */
