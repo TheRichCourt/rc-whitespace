@@ -96,6 +96,8 @@ $bodyClass .= $menu->getActive() == $menu->getDefault()
 	<div id="overlay"></div>
 
 	<div id="header" <?php echo $headerAttributes ?> >
+		<!-- Must be first selectable element, for accessibility -->
+		<a class="skip-main" href="#contentwrapper">Skip to main content</a>
 		<div id="menu">
 			<jdoc:include type="modules" name="menu" style="xhtml" />
 		</div>
@@ -128,6 +130,7 @@ $bodyClass .= $menu->getActive() == $menu->getDefault()
 				<div id="mod2">
 					<jdoc:include type="modules" name="position-2" style="xhtml" />
 				</div>
+
 				<jdoc:include type="component" />
 			</div>
 		</div>

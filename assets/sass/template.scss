@@ -126,6 +126,30 @@ body {
     margin: 0;
     padding: 0;
     top: 0;
+
+    #header {
+        a.skip-main {
+            position: absolute;
+            display: block;
+            margin: 0 auto;
+            background-color: $white;
+            padding: 10px;
+            box-shadow: 0 2px 15px #e2e2e2;
+            transform: translateY(-200px) translateX(-50%);
+            left: 50%;
+            color: $text_colour;
+            text-shadow: none;
+            z-index: 99999999;
+            margin-top:10px;
+            border-radius: 50px;
+
+            &:focus,
+            :active {
+                width: auto;
+                transform: translateX(-50%);
+            }
+        }
+    }
 }
 
 span.highlight {
