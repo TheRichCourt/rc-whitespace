@@ -22,8 +22,13 @@ body.dark {
     ul.breadcrumb,
     #content div.columns,
     #features div.feature,
-    div.cols-2 div.span6,
-    &.product section.product_intro {
+    div.cols-2 div.span6 {
         background-color: $dark_card_bg;
+    }
+
+    &.product section.product_intro {
+        @media (min-width: 1660px) {
+            background-color: $dark_card_bg;
+        }
     }
 }
