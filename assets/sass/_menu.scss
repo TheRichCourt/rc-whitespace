@@ -7,9 +7,8 @@
 		margin:0;
 		padding:0;
 		background:transparent;
-		font-family: 'Roboto Condensed', sans-serif;
+		font-family: $font_condensed;
 		font-weight: bold;
-		text-transform:uppercase;
 		min-height:68px;
 	}
 
@@ -32,6 +31,10 @@
 			display: inline-block;
 			width: 50px;
 			padding-top: 14px;
+		}
+
+		span {
+			display: none;
 		}
 	}
 
@@ -181,38 +184,40 @@
 	}
 	#menu {
 		position: fixed;
-		width: 0;
-		height: 0;
-		margin-left:0;
-		margin-top: 0;
-		@include blueGradRadial();
+		width: 50px;
+		height: 50px;
+		right: 0;
+		margin-right: 5px;
+		margin-top: 5px;
+		@include redGradRadial();
 		z-index: 998;
 		transition: all 0.28s ease-in;
 		overflow: hidden;
-		font-family: 'Roboto Condensed', sans-serif;
-		text-transform: uppercase;
-		text-align: center;
-		border-radius: 0 50vh 50vh 0;
+		font-family: $font_condensed;
+		border-radius: 50px 50px 50px 100%;
 		transition:
-			all 0.28s ease-out 0.28s,
+			all 0.28s ease-out,
 			border-radius 0.28s ease-in
 		;
 		background-size: 300% 300%;
 		animation-name: rotateGrad;
 		animation-duration: 60s;
 		animation-iteration-count: infinite;
+		padding: 0;
 	}
+
 	#menu.open {
-		margin-left: 0;
-		margin-top: 0;
+		padding-top: 10vw;
+		margin: 0;
 		width: 100%;
 		height: 100%;
 		border-radius: 0px;
 		transition:
-			all 0.28s ease-in,
-			border-radius 0.28s ease-out 0.28s
+			all 0.28s ease,
+			border-radius 0.56s ease-out
 		;
 	}
+
 	#overlay {
 		display:none;
 		background:transparent;
@@ -224,34 +229,37 @@
 		padding:0;
 		z-index:997;
 		overflow:hidden;
+		pointer-events: none;
 	}
 	#menu ul {
 		margin:0;
 		padding:0;
 		opacity:0;
-		transform:translateX(-100vw);
+		transform:translateX(100vw);
 		transition:
-			opacity 0.28s ease-in 0s,
-			transform 0.28s ease-in 0s
+			opacity .28s ease-in,
+			transform .28s ease-in
 		;
 	}
 	#menu.open ul {
 		opacity:1;
 		transform:translateX(0);
 		transition:
-			opacity 0.56s ease-out,
-			transform 0.56s ease-out
+			opacity .56s ease-out .28s,
+			transform .84s cubic-bezier(.37,0,.14,1.2)
 		;
 	}
 	#menu ul * {
 		transition:all 0.28s ease;
 		margin:0 auto;
-		max-width:80%;
+		max-width:100%;
 	}
 	#menu ul li {
 		list-style-type: none;
-		display: inline-block;
-		width: 50%;
+		display: block;
+		width: 100%;
+		overflow: visible;
+		white-space: nowrap;
 
 		&.default {
 			display: block;
@@ -259,35 +267,34 @@
 		}
 	}
 	#menu ul li a {
-		padding: 15px;
+		padding-left: 10vw;
 		margin: 0 auto;
-		font-size: 1.2em;
-		font-weight: 300;
+		font-size: 10vh;
+		font-weight: 700;
 		display: inline-block;
 		color: $white;
 		border-radius: 300px;
 
 		&.menuhomelink {
-			width: 100%;
+			width: 50%;
 
 			img {
+				display: none;
 				height: auto;
 			}
 		}
 
 		&:not(.menuhomelink) {
 			img {
-				display: block;
+				display: none;
 				width: 50%;
 			}
 		}
 
 		span {
-			line-height: 1.2;
-			background-color: rgba(0, 0, 0, 0.2);
-			padding: 5px 10px;
+			line-height: 1.6;
 			display: block;
-			margin-top: 10px;
+			// margin-top: 10px;
 			border-radius: 20px;
 			width: auto;
 		}

@@ -1,7 +1,7 @@
 #fcp_wrapper {
     @include redGrad();
     color: $white;
-    
+
     @media (min-width: 500px) {
         width: calc(100% - 100px);
         padding: 50px;
@@ -20,10 +20,10 @@
     label {
         font-size: 16px;
         line-height: 1.1;
-        font-family: 'Roboto Condensed', 'Roboto', 'Arial', sans-serif;
+        font-family: $font_condensed;
         text-transform: uppercase;
         font-weight: bold;
-        
+
         .fcp_focus {
             color: $white;
         }

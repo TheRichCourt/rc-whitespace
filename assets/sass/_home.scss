@@ -25,8 +25,9 @@ body.home {
         .rc_crazytext {
             width: 100%;
             text-shadow: none;
+
             h1 {
-                font-family: 'Roboto', Arial, sans-serif;
+                font-family: $font_headings;
                 font-size: 4em !important;
                 text-align: left;
             }
@@ -36,8 +37,9 @@ body.home {
         .rc_crazytext {
             width: 100%;
             text-shadow: none;
+
             h1 {
-                font-family: 'Roboto', Arial, sans-serif;
+                font-family: $font_headings;
                 font-size: 7em !important;
                 text-align: left;
             }

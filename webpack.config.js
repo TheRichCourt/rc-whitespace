@@ -84,7 +84,16 @@ var buildConfig = (dev) => {
                             }
                         }
                     ],
-                }
+                },
+                {
+                    test: /\.woff$/,
+                    use: {
+                        loader: "url-loader",
+                        options: {
+                            limit: 50000,
+                        },
+                    },
+                },
             ]
         },
     }

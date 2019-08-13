@@ -1,11 +1,27 @@
 // font stacks
-$font_headings: 'Roboto Slab', sans-serif;
-$font_condensed: 'Roboto Condensed', sans-serif;
+
+@font-face {
+    font-family: 'Sharp Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Samsung Sharp Sans Regular Regular'), url('../font/SamsungSharpSansRegular-Regular.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Sharp Sans';
+    font-style: normal;
+    font-weight: bold;
+    src: local('SamsungSharpSans-Bold'), url('../font/samsung_s_sharp_by_629lyric-d8y77l9.woff') format('woff');
+}
+
+$font_headings: 'Sharp Sans', sans-serif;
+$font_condensed: 'Sharp Sans', sans-serif;
 $font_main: 'Roboto', sans-serif;
 
 body {
     color: #545454;
-    font-family: "Roboto", sans-serif;
+    font-family: $font_main;
     font-size: 16px;
 }
 
@@ -37,13 +53,14 @@ h2 a {
 }
 
 h3 {
+    font-family: $font_headings;
     font-size: 1.5em;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 h4 {
     font-size: 1.3em;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 h5 {

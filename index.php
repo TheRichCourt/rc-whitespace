@@ -48,7 +48,7 @@ $bodyClass .= $menu->getActive() == $menu->getDefault()
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:700|Roboto+Slab:400,700" rel="stylesheet">
+	<?php // link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:700|Roboto+Slab:400,700" rel="stylesheet"> ?>
 	<?php if ($article->title == 'Together') {
 		echo
 		'<style>
@@ -62,7 +62,7 @@ $bodyClass .= $menu->getActive() == $menu->getDefault()
 		</style>';
 	}?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="theme-color" content="#BD4932">
+	<meta name="theme-color" content="#252525">
 	<link rel="shortcut icon" href="<?php echo $this->baseurl .'/templates/'.$this->template.'favicon.ico'?>" type="image/x-icon">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<jdoc:include type="head" />

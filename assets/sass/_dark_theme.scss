@@ -6,29 +6,40 @@ body * {
     transition: color .28s linear;
 }
 
-body.dark {
-    background-color: $dark_bg;
-    color: $dark_text_color;
-
-    #menu ul li a,
-    .blogportfolio .cols-1 .page-header h2 a {
-        color: $dark_text_color;
-    }
-
-    #contentwrapper {
+@media (prefers-color-scheme: dark) {
+    body {
         background-color: $dark_bg;
-    }
+        color: $dark_text_color;
 
-    ul.breadcrumb,
-    #content div.columns,
-    #features div.feature,
-    div.cols-2 div.span6 {
-        background-color: $dark_card_bg;
-    }
+        #menu ul li a,
+        .blogportfolio .cols-1 .page-header h2 a {
+            color: $dark_text_color;
+        }
 
-    &.product section.product_intro {
-        @media (min-width: 1660px) {
+        #contentwrapper {
+            background-color: $dark_bg;
+        }
+
+        .mshop .ms_panel select {
+            background-color: $dark_bg;
+            color: $dark_text_color;
+            border: none;
+        }
+
+        ul.breadcrumb,
+        #content div.columns,
+        #features div.feature,
+        div.cols-2 div.span6,
+        .msgroup_leading,
+        .msgroup_intro,
+        .mshop .ms_panel {
             background-color: $dark_card_bg;
+        }
+
+        &.product section.product_intro {
+            @media (min-width: 1660px) {
+                background-color: $dark_card_bg;
+            }
         }
     }
 }
