@@ -179,7 +179,6 @@
 		z-index: 999;
 		margin: 5px;
 		border-radius: 100%;
-		background-color: #fff;
 		right: 0;
 	}
 	#menu {
@@ -189,7 +188,7 @@
 		right: 0;
 		margin-right: 5px;
 		margin-top: 5px;
-		@include redGradRadial();
+		@include glass();
 		z-index: 998;
 		transition: all 0.28s ease-in;
 		overflow: hidden;
@@ -272,7 +271,12 @@
 		font-size: 10vh;
 		font-weight: 700;
 		display: inline-block;
-		color: $white;
+		color: $text_colour;
+
+		@media (prefers-color-scheme: dark) {
+			color: $dark_text_color;
+		}
+
 		border-radius: 300px;
 
 		&.menuhomelink {

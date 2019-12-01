@@ -8,7 +8,7 @@ export default class SmoothScrollAnchors {
 
                 if (target.length) {
                     jQuery('html, body').animate({
-                        scrollTop: target.offset().top
+                        scrollTop: target.offset().top - 20
                     }, 1000);
 
                     return false;

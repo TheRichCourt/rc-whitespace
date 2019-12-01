@@ -1,0 +1,49 @@
+#bottom-tabs {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    @include glass();
+
+    @media (min-width: 770px) {
+        // display: none;
+    }
+
+    @media (min-width: 1660px) {
+        margin-left: 600px;
+        width: calc(100% - 600px);
+    }
+
+    .custom {
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+
+        a {
+            flex: 1;
+            text-align: center;
+            padding: 15px 0;
+            color: $text_colour;
+            font-size: .8rem;
+            color: $text_colour;
+            transition: background-color .28s ease;
+
+            &:hover {
+                @media (pointer: fine) {
+                    background-color: $red;
+                }
+            }
+
+            @media (prefers-color-scheme: dark) {
+                color: $dark_text_color;
+            }
+
+            i {
+                display: block;
+                font-size: 1rem;
+            }
+        }
+    }
+}

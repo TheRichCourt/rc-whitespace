@@ -138,11 +138,28 @@ tr.ms_prodsep span.ms_prodsep_name {
     font-size: 1.2em;
     color: #4A7194;
 }
-.ms_form label {
-    display: inline-block;
-    width: 10em;
-    margin-right: 1em;
+.ms_form {
+    text-align: left;
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+
+    label {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    input, textarea, button.mshop_button {
+        display: block;
+        min-width: 100%;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+        box-sizing: border-box;
+    }
 }
+
 @media screen and (max-width: 500px) {
     div.mspayline span {
         display: block;
@@ -277,4 +294,14 @@ tr.ms_prodsep span.ms_prodsep_name {
 .ms_invoice table td {
     border: 1px solid #444444;
     padding: 4px;
+}
+.buy_now_btn {
+    padding: 0;
+    width: 200px;
+    border-radius: 3px;
+    transition: transform .28s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 }

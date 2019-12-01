@@ -1,13 +1,9 @@
-$dark_bg: #212121;
-$dark_card_bg: #313131;
-$dark_text_color: #fff;
-
 body * {
     transition: color .28s linear;
 }
 
 @media (prefers-color-scheme: dark) {
-    body {
+    body:not(.no-dark) {
         background-color: $dark_bg;
         color: $dark_text_color;
 
@@ -28,12 +24,20 @@ body * {
 
         ul.breadcrumb,
         #content div.columns,
-        #features div.feature,
+        .features div.feature,
         div.cols-2 div.span6,
         .msgroup_leading,
         .msgroup_intro,
-        .mshop .ms_panel {
+        .mshop .ms_panel,
+        .ms_price_table {
             background-color: $dark_card_bg;
+        }
+
+        .ms_price_table {
+            th,
+            td {
+                border-color: $dark_border;
+            }
         }
 
         &.product section.product_intro {

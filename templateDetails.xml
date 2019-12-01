@@ -25,6 +25,7 @@
 		<position>position-1</position>
 		<position>position-2</position>
 		<position>footer</position>
+		<position>bottom-tabs</position>
 	</positions>
 	<config>
 		<fields name="params">

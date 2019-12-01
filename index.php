@@ -1,11 +1,12 @@
 <?php
 
 /**
- * @copyright   Copyright (C) 2015 - 2018 Rich Court. All rights reserved.
- * @license     GNU General Public License version 2 or later
+ * @copyright   Copyright (C) 2015 - 2019 Rich Court. All rights reserved.
  */
 
 defined('_JEXEC') or die;
+
+$this->setHtml5(true);
 
 $app             = JFactory::getApplication();
 $doc             = JFactory::getDocument();
@@ -44,50 +45,43 @@ $bodyClass .= $menu->getActive() == $menu->getDefault()
 	: ''
 ;
 
+// if a header module's included, put a parallax bg on the header div
+$showTitleAtTop = false;
+
+if ($bg_image !== '' && $this->countModules('header') > 0) {
+	$headerAttributes = 'class="extendedheader" data-bleed="10" data-speed="0.5" data-parallax="scroll" data-image-src="'. JUri::root(true) . '/' . $bg_image.'"';
+} elseif (isset($images->image_intro) && $images->image_intro != '') {
+	$headerAttributes = 'class="extendedheader" data-bleed="10" data-speed="0.5" data-parallax="scroll" data-image-src="'. JUri::root(true) . '/' . $images->image_intro.'"';
+	$showTitleAtTop = true;
+} elseif ($this->countModules('header') > 0) {
+	$headerAttributes = 'class="extendedheader"';
+} else {
+	$headerAttributes = '';
+}
+
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
+<html lang="<?= $this->language ?>" dir="<?= $this->direction ?>">
 <head>
-	<?php // link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:700|Roboto+Slab:400,700" rel="stylesheet"> ?>
-	<?php if ($article->title == 'Together') {
-		echo
-		'<style>
+	<?php if (strtolower($article->title) == 'together') : ?>
+		<style>
 			@font-face {
 				font-family: "Indy Pimp";
-				src: url(' . "{$this->baseurl}/templates/{$this->template}/font/indiepimptbs.ttf" . ') format("truetype");
+				src: url('<?= "{$this->baseurl}/templates/{$this->template}/font/indiepimptbs.ttf" ?>') format("truetype");
 			}
 			#title h1, #title p, #header h1, div.category-desc h1, h1.page-header a, div.item-page div.page-header h2, span.subheading-category {
 				font-family: "Indy Pimp", "Roboto Slab", sans-serif;
 			}
-		</style>';
-	}?>
+		</style>
+	<?php endif ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="theme-color" content="#252525">
-	<link rel="shortcut icon" href="<?php echo $this->baseurl .'/templates/'.$this->template.'favicon.ico'?>" type="image/x-icon">
+	<link rel="shortcut icon" href="<?= $this->baseurl .'/templates/'.$this->template.'favicon.ico' ?>" type="image/x-icon">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<jdoc:include type="head" />
 </head>
 
-<body class="<?php if ($bodyClass !== "") { echo $bodyClass; }?>">
-	<?php // if a header module's included, put a parallax bg on the header div
-	$showTitleAtTop = false;
-
-	if ($bg_image != '') {
-		if ($this->countModules('header') > 0) {
-			$headerAttributes = 'class="extendedheader" data-bleed="10" data-speed="0.5" data-parallax="scroll" data-image-src="'. JUri::root(true) . '/' . $bg_image.'"';
-		} else if (isset($images->image_intro) && $images->image_intro != '') {
-			$headerAttributes = 'class="extendedheader" data-bleed="10" data-speed="0.5" data-parallax="scroll" data-image-src="'. JUri::root(true) . '/' . $images->image_intro.'"';
-			$showTitleAtTop = true;
-		} else {
-			$headerAttributes = '';
-		}
-	} else {
-		if ($this->countModules('header') > 0) {
-			$headerAttributes = 'class="extendedheader"';
-		}
-	}
-	?>
-
+<body class="<?= $bodyClass !== '' ? $bodyClass : '' ?>">
 	<div id="menubutton">
 		<div class="changeable_icon_container">
 			<div class="changeable_icon changeable_menu_icon"></div>
@@ -95,38 +89,31 @@ $bodyClass .= $menu->getActive() == $menu->getDefault()
 	</div>
 	<div id="overlay"></div>
 
-	<div id="header" <?php echo $headerAttributes ?> >
+	<div id="header" <?= $headerAttributes ?> >
 		<!-- Must be first selectable element, for accessibility -->
 		<a class="skip-main" href="#contentwrapper">Skip to main content</a>
 		<div id="menu">
 			<jdoc:include type="modules" name="menu" style="xhtml" />
 		</div>
 
-		<?php if ($this->countModules('header') > 0 || $showTitleAtTop) { ?>
+		<?php if ($this->countModules('header') > 0 || $showTitleAtTop) : ?>
 		<div id="title">
 			<jdoc:include type="modules" name="header" style="none" />
-			<?php if ($this->countModules('header') == 0) {
-				//echo '<h1>' . $article->title . '<h1>';
-			}?>
 		</div>
-		<?php } ?>
+		<?php endif ?>
 	</div>
 
 	<div id="wrapper">
-
-		<?php if ($this->countModules('position-1') > 0) { ?>
-		<div id="mod1">
-			<jdoc:include type="modules" name="position-1" style="xhtml" />
-		</div>
-		<?php } ?>
-
-		<?php if ($this->countModules('position-2') > 0) { ?>
-
-		<?php } ?>
+		<?php if ($this->countModules('position-1') > 0) : ?>
+			<div id="mod1">
+				<jdoc:include type="modules" name="position-1" style="xhtml" />
+			</div>
+		<?php endif ?>
 
 		<div id="contentwrapper">
 			<div id="content" class="">
 				<jdoc:include type="message" />
+
 				<div id="mod2">
 					<jdoc:include type="modules" name="position-2" style="xhtml" />
 				</div>
@@ -142,11 +129,17 @@ $bodyClass .= $menu->getActive() == $menu->getDefault()
 		</div>
 	</div>
 
+	<?php if ($this->countModules('bottom-tabs') > 0) : ?>
+		<div id="bottom-tabs">
+			<jdoc:include type="modules" name="bottom-tabs" style="xhtml" />
+		</div>
+	<?php endif ?>
+
 	<?= createScriptTag($this->baseurl . '/templates/' . $this->template . '/dist/template.js'.'?'.filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/dist/template.js')) ?>
 </body>
 </html>
 <?php
 
 function createScriptTag($url) {
-	return '<script src="' . $url . '" type="text/javascript"></script>';
+	return '<script src="' . $url . '"></script>';
 }

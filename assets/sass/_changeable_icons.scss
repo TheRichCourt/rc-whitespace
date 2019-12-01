@@ -1,3 +1,11 @@
+@mixin changeableIconColour() {
+    background-color: $text_colour;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: $dark_text_color;
+    }
+}
+
 div.changeable_icon_container {
     width: calc(100% - 20px);
     height: calc(100% - 20px);
@@ -8,21 +16,21 @@ div.changeable_icon_container {
     padding: 10px;
 
     div.changeable_icon {
-        background:#212121;
+        @include changeableIconColour();
         position: absolute;
         transition: all .28s cubic-bezier(.37,0,.14,1.5);
         border-radius: 3px;
     }
     div.changeable_icon::before {
         content: " ";
-        background:#212121;
+        @include changeableIconColour();
         position: absolute;
         transition: all .28s cubic-bezier(.37,0,.14,1.5);
         border-radius: inherit;
     }
     div.changeable_icon::after {
         content: " ";
-        background:#212121;
+        @include changeableIconColour();
         position: absolute;
         border-radius: inherit;
         transition: all .28s cubic-bezier(.37,0,.14,1.5);
@@ -34,7 +42,7 @@ div.changeable_icon_container {
         top: 20%;
         left: 10%;
         transform: rotate(0deg) translateZ(0);
-        background: #212121;
+        @include changeableIconColour();
     }
     div.changeable_menu_icon::before {
         width: 100%;
@@ -42,7 +50,7 @@ div.changeable_icon_container {
         top:250%;
         left: 0;
         transform: rotate(0deg) translateZ(0);
-        background: #212121;
+        @include changeableIconColour();
     }
     div.changeable_menu_icon::after {
         width: 100%;
@@ -50,7 +58,7 @@ div.changeable_icon_container {
         top: 525%;
         left: 0;
         transform: rotate(0deg) translateZ(0);
-        background: #212121;
+        @include changeableIconColour();
     }
     /* close */
     div.changeable_close_icon {

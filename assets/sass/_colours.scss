@@ -16,3 +16,26 @@ $bg: #f2f2f2;
 $breadcrumb_bg: #eeeeee;
 $footer_bg: #e2e2e2;
 $text_colour: #545454;
+
+$dark_bg: #212121;
+$dark_card_bg: #313131;
+$dark_border: #353535;
+$dark_text_color: #e2e2e2;
+
+@mixin glass() {
+    background: rgba(255, 255, 255, .9);
+
+    @media (prefers-color-scheme: dark) {
+        background: rgba(0, 0, 0, .9);
+    }
+
+    @supports (backdrop-filter: blur(50px)) {
+        background: rgba(255, 255, 255, .5);
+        backdrop-filter: blur(50px);
+
+        @media (prefers-color-scheme: dark) {
+            background: rgba(0, 0, 0, .5);
+            backdrop-filter: blur(50px);
+        }
+    }
+}

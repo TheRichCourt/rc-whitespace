@@ -10,7 +10,7 @@ export default class Transitions {
             });
         }
 
-        var items = document.querySelectorAll('.blog .span6, .columns, .feature, .product_intro > *, .pull-quote');
+        var items = document.querySelectorAll('.blog .span6, .columns, .feature, .product_intro > *, .pull-quote, .blogportfolio .page-header, .pull-quote, .blogportfolio .item-image');
 
         if ('IntersectionObserver' in window) {
             var observer = new IntersectionObserver(callback);

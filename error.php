@@ -31,7 +31,7 @@ $sitename = $app->get('sitename');
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title><?php echo $this->title; ?> <?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8'); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="<?php echo $this->baseurl . '/templates/' . $this->template . '/css/template.css?' . filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/css/template.css'); ?>" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $this->baseurl . '/templates/' . $this->template . '/dist/template.css?' . filemtime(JPATH_ROOT.'/templates/' . $this->template  . '/dist/template.css'); ?>" type="text/css" />
 </head>
 
 <body class="error">
