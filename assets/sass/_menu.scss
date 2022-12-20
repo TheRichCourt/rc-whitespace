@@ -107,7 +107,7 @@
 		opacity: 0;
 		margin: 0 auto;
 		z-index: 9999;
-		border-radius: 3px;
+		border-radius: var(--border-radius-small);
 		overflow: hidden;
 		display: block;
 		min-width: 250px;
@@ -271,10 +271,10 @@
 		font-size: 10vh;
 		font-weight: 700;
 		display: inline-block;
-		color: $text_colour;
+		color: var(--colour-fg);
 
 		@media (prefers-color-scheme: dark) {
-			color: $dark_text_color;
+			color: var(--colour-fg);
 		}
 
 		border-radius: 300px;

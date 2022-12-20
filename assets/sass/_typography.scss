@@ -1,91 +1,74 @@
 // font stacks
 
 @font-face {
-    font-family: 'Sharp Sans';
+    font-family: 'Retro Sick';
     font-style: normal;
     font-weight: normal;
-    src: local('Samsung Sharp Sans Regular Regular'), url('../font/SamsungSharpSansRegular-Regular.woff') format('woff');
+    src: local('Retro Sick'), url('../font/RetroSick-Regular.woff2') format('woff');
 }
 
-
-@font-face {
-    font-family: 'Sharp Sans';
-    font-style: normal;
-    font-weight: bold;
-    src: local('SamsungSharpSans-Bold'), url('../font/samsung_s_sharp_by_629lyric-d8y77l9.woff') format('woff');
-}
-
-$font_headings: 'Sharp Sans', sans-serif;
-$font_condensed: 'Sharp Sans', sans-serif;
+$font_headings: 'Retro Sick', serif;
+// @todo
+$font_condensed: 'Roboto', sans-serif;
 $font_main: 'Roboto', sans-serif;
+
+html {
+    font-size: 100%;
+}
+
+:root {
+    --font-size-xxxxl: 3.052rem;
+    --font-size-xxxl: 2.441rem;
+    --font-size-xx1: 1.953rem;
+    --font-size-xl: 1.563rem;
+    --font-size-l: 1.25rem;
+}
 
 body {
     color: #545454;
     font-family: $font_main;
-    font-size: 16px;
 }
 
-h1 {
+small, .text_small {font-size: 0.8rem;}
+
+h1, h2, h3, h4, h5, h6 {
     font-family: $font_headings;
-    font-size: 50px;
-    line-height: 1em !important;
-    font-weight: bold;
+    margin: 3rem 0 1.38rem;
+
+    a {
+        color: inherit;
+
+        &:hover {
+            text-decoration: none;
+            color: var(--colour-link);
+        }
+    }
 }
 
-h1 a {
-    font-family: $font_headings;
-    font-size: 50px;
-    font-weight: bold;
+h1,
+.page-header h2 {
+    margin-top: 0;
+    font-size: var(--font-size-xxxxl);
 }
 
-h2 {
-    font-family: $font_headings;
-    font-size: 36px;
-    line-height: 36px;
-    font-weight: bold;
-}
-
-h2 a {
-    font-family: $font_headings;
-    font-size: 36px;
-    line-height: 36px;
-    font-weight: bold;
-}
-
-h3 {
-    font-family: $font_headings;
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-h4 {
-    font-size: 1.3em;
-    font-weight: bold;
-}
-
-h5 {
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-h6 {
-    font-size: 1.1em;
-    font-weight: bold;
-}
+h2 {font-size: var(--font-size-xxxl);}
+h3 {font-size: var(--font-size-xxl);}
+h4 {font-size: var(--font-size-xl);}
+h5 {font-size: var(--font-size-l);}
 
 a {
     text-decoration: none;
     font-weight: 400;
-    color: $red;
+    color: var(--colour-link);
     cursor: pointer;
     transition: color 0.28s ease;
-}
 
-a:hover {
-    color: $blue;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 p {
-    line-height: 1.5em;
-    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 2rem;
 }

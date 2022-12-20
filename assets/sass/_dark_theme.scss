@@ -2,48 +2,45 @@ body * {
     transition: color .28s linear;
 }
 
-@media (prefers-color-scheme: dark) {
-    body:not(.no-dark) {
-        background-color: $dark_bg;
-        color: $dark_text_color;
+body {
+    background-color: var(--colour-bg);
+    color: var(--colour-fg);
 
-        #menu ul li a,
-        .blogportfolio .cols-1 .page-header h2 a {
-            color: $dark_text_color;
+    #menu ul li a,
+    .blogportfolio .cols-1 .page-header h2 a {
+        color: var(--colour-fg);
+    }
+
+    #contentwrapper {
+        background-color: var(--colour-bg);
+    }
+
+    .mshop .ms_panel select {
+        background-color: var(--colour-bg);
+        color: var(--colour-fg);
+        border: none;
+    }
+
+    ul.breadcrumb,
+    #content div.columns,
+    div.cols-2 div.span6,
+    .msgroup_leading,
+    .msgroup_intro,
+    .mshop .ms_panel,
+    .ms_price_table {
+        background-color: var(--colour-elevated-bg);
+    }
+
+    .ms_price_table {
+        th,
+        td {
+            border-color: var(--colour-border);
         }
+    }
 
-        #contentwrapper {
-            background-color: $dark_bg;
-        }
-
-        .mshop .ms_panel select {
-            background-color: $dark_bg;
-            color: $dark_text_color;
-            border: none;
-        }
-
-        ul.breadcrumb,
-        #content div.columns,
-        .features div.feature,
-        div.cols-2 div.span6,
-        .msgroup_leading,
-        .msgroup_intro,
-        .mshop .ms_panel,
-        .ms_price_table {
-            background-color: $dark_card_bg;
-        }
-
-        .ms_price_table {
-            th,
-            td {
-                border-color: $dark_border;
-            }
-        }
-
-        &.product section.product_intro {
-            @media (min-width: 1660px) {
-                background-color: $dark_card_bg;
-            }
+    &.product section.product_intro {
+        @media (min-width: 1660px) {
+            background-color: var(--colour-elevated-bg);
         }
     }
 }

@@ -2,12 +2,7 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-
-    @include glass();
-
-    @media (min-width: 770px) {
-        // display: none;
-    }
+    background-color: var(--colour-bg);
 
     @media (min-width: 1660px) {
         margin-left: 600px;
@@ -25,24 +20,30 @@
             flex: 1;
             text-align: center;
             padding: 15px 0;
-            color: $text_colour;
+            color: var(--colour-fg);
             font-size: .8rem;
-            color: $text_colour;
+            color: var(--colour-fg);
             transition: background-color .28s ease;
 
             &:hover {
                 @media (pointer: fine) {
                     background-color: $red;
                 }
+
+                i {
+                    font-size: 1.5rem;
+                }
             }
 
             @media (prefers-color-scheme: dark) {
-                color: $dark_text_color;
+                color: var(--colour-fg);
             }
 
             i {
                 display: block;
                 font-size: 1rem;
+                transition: font-size .28s ease;
+                line-height: 1.5rem;
             }
         }
     }

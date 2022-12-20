@@ -13,14 +13,25 @@ $yellow_lighter: #f5b540;
 
 $white: #fff;
 $bg: #f2f2f2;
-$breadcrumb_bg: #eeeeee;
-$footer_bg: #e2e2e2;
-$text_colour: #545454;
 
-$dark_bg: #212121;
-$dark_card_bg: #313131;
-$dark_border: #353535;
-$dark_text_color: #e2e2e2;
+:root {
+    --colour-bg: #ffffff;
+    --colour-elevated-bg: #f4f4f2;
+    --colour-fg: #1f2938;
+    --colour-border: #1f2938;
+    --colour-link: #0066ff;
+
+    body:not(.no-dark),
+    body:not(.no-dark) * {
+        @media (prefers-color-scheme: dark) {
+            --colour-bg: #1f2938;
+            --colour-elevated-bg: #283548;
+            --colour-fg: #e2e2e2;
+            --colour-border: #e2e2e2;
+            --colour-link: #0066ff;
+        }
+    }
+}
 
 @mixin glass() {
     background: rgba(255, 255, 255, .9);

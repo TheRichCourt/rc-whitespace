@@ -3,12 +3,12 @@ div.mshop {
     margin: 0 auto;
 	padding:25px;
 	text-align:center;
-    border-radius: 3px;
+    border-radius: var(--border-radius);
 }
 div.msgroup_leading {
     margin: 0 auto;
     background: #fff;
-    border-radius: 3px;
+    border-radius: var(--border-radius);
     padding: 25px;
     text-align: center;
     max-width: calc(100% - 50px);
@@ -24,7 +24,7 @@ div.msgroup_intro_wrapper {
         margin: 0 10px;
         max-width: calc(100% - 72px);
         background: #fff;
-        border-radius: 3px;
+        border-radius: var(--border-radius);
         padding: 25px;
         text-align: center;
         margin-bottom: 20px;
@@ -37,7 +37,7 @@ div.msgroup_intro_wrapper {
         max-width: calc(50% - 72px);
         vertical-align:top;
         background: #fff;
-        border-radius: 3px;
+        border-radius: var(--border-radius);
         padding: 25px;
         text-align: center;
         margin-bottom: 20px;
@@ -93,13 +93,13 @@ input.buy_now_btn:disabled {
     cursor: default;
 }
 input.buy_now_btn {
-	border:0;
-	margin:0 auto;
-	text-align:center;
+	border: 0;
+	margin: 0 auto;
+	text-align: center;
 }
 .ms_price_table{
-	background:#fff;
-	border-radius:3px;
+	background: #fff;
+	border-radius: var(--border-radius);
 }
 .ms_price_table,
 .ms_price_table th,
@@ -180,11 +180,11 @@ tr.ms_prodsep span.ms_prodsep_name {
     }
 }
 .mshop .ms_panel {
-	padding:25px;
-	background:#fff;
-	border-radius:3px;
+	padding: 25px;
+	background: #fff;
+	border-radius: var(--border-radius);
 	max-width: 600px;
-	margin:0 auto;
+	margin: 0 auto;
 }
 .ms_panel {
     text-align: center;
@@ -298,7 +298,7 @@ tr.ms_prodsep span.ms_prodsep_name {
 .buy_now_btn {
     padding: 0;
     width: 200px;
-    border-radius: 3px;
+    border-radius: var(--border-radius);
     transition: transform .28s ease;
 
     &:hover {

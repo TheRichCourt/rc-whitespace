@@ -5,7 +5,7 @@
     @media (min-width: 500px) {
         width: calc(100% - 100px);
         padding: 50px;
-        border-radius: 20px;
+        border-radius: var(--border-radius);
     }
 
     @media (max-width: 499px) {
@@ -53,7 +53,7 @@
 
     select option {
         background: $white;
-        color: $text_colour;
+        color: var(--colour-fg);
     }
 
     button {

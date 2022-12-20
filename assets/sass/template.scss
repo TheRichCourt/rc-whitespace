@@ -1,7 +1,22 @@
 @charset "UTF-8";
 
+@import "~normalize.css";
 @import "_colours.scss";
 @import "_typography.scss";
+
+:root {
+    --border-radius: 2rem;
+    --border-radius-small: 1rem;
+    --responsive-spacing: 1rem;
+
+    @media only screen and (min-width: 1024px) {
+        --responsive-spacing: 2rem;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
 
 @mixin movingBackground() {
     animation-name: rotateGrad;
@@ -81,13 +96,12 @@
 %button {
     display: inline-block;
     padding: 10px;
-    color: #fff;
+    color: $white;
     @include blueGrad();
-    border-radius: 20px;
+    border-radius: var(--border-radius);
     border: none;
     min-width: 150px;
     text-align: center;
-    // box-shadow: 0 2px 15px #d2d2d2;
     transition: all 0.2s ease;
     font-weight: bold;
     font-size: 16px;
@@ -101,9 +115,9 @@
         left: 50%;
         width: 0;
         height: 100%;
-        color: #fff;
+        color: $white;
         border-radius: 100%;
-        background-color: rgba(255,255,255,0);
+        background-color: rgba(255, 255, 255, 0);
         transition: width .4s ease, height .4s ease, left .4s ease, top .4s ease, border-radius .4s ease, background-color .4s ease;
     }
 
@@ -117,13 +131,13 @@
             width: 100%;
             height: 200px;
             border-radius: 0;
-            background-color: rgba(255,255,255,0.1);
+            background-color: rgba(255, 255, 255, .1);
         }
     }
 }
 
 body {
-    background: #f2f2f2;
+    background: var(--colour-bg);
     width: 100%;
     min-height: 100vh;
     margin: 0;
@@ -140,11 +154,11 @@ body {
             box-shadow: 0 2px 15px #e2e2e2;
             transform: translateY(-200px) translateX(-50%);
             left: 50%;
-            color: $text_colour;
+            color: var(--colour-fg);
             text-shadow: none;
             z-index: 99999999;
             margin-top:10px;
-            border-radius: 50px;
+            border-radius: var(--border-radius);
 
             &:focus,
             :active {
@@ -181,7 +195,6 @@ span.highlight {
     padding: 0;
     margin: 0;
     background: transparent;
-    line-height: 2em;
     margin: 0;
     max-width: 100%;
     position: relative;
@@ -252,34 +265,33 @@ img.scrollicon {
 
 #mod1 {
     width: 100%;
-    background: $bg;
+    background: var(--colour-bg);
 }
 
 #mod2 {
     width: 100%;
 }
 
-@media (max-width: 499px) {
-    div.pull-quote {
-        width: calc(100%);
-        padding: 20px;
-        @include blueGrad();
-        color: $white;
-        margin-left: -20px;
-        margin-right: -20px;
-        margin-bottom: 10px;
-    }
-}
+div.pull-quote {
+    padding: calc(var(--responsive-spacing) * 2);
+    @include blueGrad();
+    color: $white;
+    margin-bottom: var(--responsive-spacing);
+    border-radius: var(--border-radius);
+    width: 100%;
 
-@media (min-width: 500px) {
-    div.pull-quote {
-        width: calc(100%);
-        padding: 50px;
-        @include blueGrad();
-        color: #fff;
-        margin-left: -50px;
-        margin-right: -50px;
-        margin-bottom: 10px;
+    * {
+        font-size: var(--font-size-xxl);
+
+        @media only screen and (min-width: 1024px) {
+            font-size: var(--font-size-xxxl);
+        }
+
+        margin-top: 0;
+    }
+
+    p {
+        margin-bottom: 0;
     }
 }
 
@@ -293,7 +305,7 @@ div.pull-quote.yellow {
 
 @media (min-width: 902px) {
     div.pull-quote {
-        border-radius: 20px;
+        border-radius: var(--border-radius);
     }
 }
 
@@ -302,7 +314,7 @@ ul.breadcrumb {
     margin: 0 auto;
     max-width: 900px;
     list-style: none;
-    background: $breadcrumb_bg;
+    background: var(--colour-elevated-bg);
     border-radius: 100px;
     padding: 0;
     font-size: 12px;
@@ -321,7 +333,7 @@ ul.breadcrumb li {
 
 #contentwrapper {
     width: 100%;
-    background: $bg;
+    background: var(--colour-bg);
 }
 
 .blog {
@@ -375,11 +387,11 @@ ul.breadcrumb li {
     }
     div.cols-3 div.span4 {
         max-width: calc(33% - 50px);
-        padding: 0 15px;
+        padding: var(--responsive-spacing);
         margin: 0 10px 20px 10px;
         display: inline-block;
         float: left;
-        border-radius: 3px;
+        border-radius: var(--border-radius);
         // box-shadow: 0 2px 15px #e2e2e2;
         background: #fff;
         text-align: center;
@@ -395,11 +407,11 @@ ul.breadcrumb li {
     }
     div.cols-2 div.span6 {
         max-width: calc(50% - 60px);
-        padding: 0 20px;
+        padding: var(--responsive-spacing);
         margin: 0 10px 20px 10px;
         display: inline-block;
         float: left;
-        border-radius: 3px;
+        border-radius: var(--border-radius);
         // box-shadow: 0 2px 15px #e2e2e2;
         background: #fff;
         text-align: center;
@@ -418,8 +430,10 @@ ul.breadcrumb li {
     #graph_container {
         display: block;
     }
+
     body.product {
         section.product_intro {
+            display: none;
             position: fixed;
             left: 0;
             width: 500px;
@@ -429,14 +443,17 @@ ul.breadcrumb li {
             background-color: #fff;
             height: calc(100% - 74px);
         }
+
         #header {
             z-index: 2;
             position: fixed;
         }
+
         #wrapper {
             margin-left: 600px;
             width: calc(100% - 600px);
         }
+
         #footer {
             margin-left: 600px;
             width: calc(100% - 660px);
@@ -454,17 +471,6 @@ div.items-leading > div {
 
 div.category-desc {
     margin-bottom: 150px;
-}
-
-#header h1, div.category-desc h1, h1.page-header a, div.item-page div.page-header h2, span.subheading-category {
-    font-size: 72px;
-    line-height: 72px;
-}
-
-h2.entry-title a, h2.name {
-    font-size: 1em;
-    font-size: 36px;
-    line-height: 36px;
 }
 
 #content img {
@@ -507,52 +513,30 @@ h2.entry-title a, h2.name {
 }
 
 .features, #addons {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(Min(16rem, 100%), 1fr));
 }
 
-@media (max-width: 499px) {
-    #content div.columns, .features .feature {
-        display: block;
-        background: #e2e2e2;
-        padding: 1px 20px;
-        margin-bottom: 20px;
-        border-radius: 3px;
+#content div.columns, .features .feature {
+    vertical-align: top;
+    display: inline-block;
+    background: var(--colour-elevated-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+
+    h3 {
+        margin-top: 0;
     }
-}
 
-@media (min-width: 500px) and (max-width: 767px) {
-    #content div.columns, .features .feature {
-        max-width: calc(48% - 40px);
-        margin: 0 1.5% 20px 0;
-        vertical-align: top;
-        display: inline-block;
-        background: #e2e2e2;
-        padding: 0 20px;
-        border-radius: 3px;
-    }
-}
-
-@media (min-width: 768px) {
-    #content div.columns, .features .feature {
-        max-width: calc((100% / 3) - 10px);
-        margin: 0 15px 15px 0;
-        vertical-align: top;
-        display: inline-block;
-        background: #e2e2e2;
-        padding: 0 20px;
-        border-radius: 3px;
-        box-sizing: border-box;
-
-        &:nth-of-type(3), &:nth-of-type(6), &:nth-of-type(9), &:nth-of-type(12) {
-            margin: 0 0 15px 0;
-        }
+    p:last-child {
+        margin-bottom: 0;
     }
 }
 
 dl.article-info > * {
     display: inline-block;
-    margin: 0 15px 0 0;
+    margin: 0 1rem 0 0;
 }
 
 dt.article-info-term {
@@ -560,62 +544,29 @@ dt.article-info-term {
 }
 
 div.entry-meta, dl.article-info {
-    padding: 10px 0;
-    color: #aaa;
-    font-size: 12px;
-    margin-bottom: 10px;
+    padding: 1rem 0;
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
 div.entry-meta > span, div.entry-meta > time, div.entry-meta > ul {
-    padding: 0 5px 0 0;
+    padding: 0 .5rem 0 0;
     display: inline-block;
     margin: 0;
 }
 
 div.entry-meta ul li {
     display: inline-block;
-    margin-right: 5px;
-}
-
-div.content_rating {
-    display: inline-block;
-    margin-right: 5px;
-    color: #aaa;
-    font-size: 12px;
-}
-
-div.content_rating > * {
-    display: inline-block;
-    margin-right: 5px;
-    color: #aaa;
-    font-size: 12px;
-}
-
-span.content_vote {
-    display: inline-block;
-    margin-right: 5px;
-    color: #aaa;
-    font-size: 12px;
-}
-
-span.content_vote > * {
-    display: inline-block;
-    margin-right: 5px;
-    color: #aaa;
-    font-size: 12px;
-}
-
-div.content_rating + form {
-    display: inline-block;
-    margin-right: 5px;
-    color: #aaa;
-    font-size: 12px;
+    margin-right: .5rem;
 }
 
 ul.pagenav {
     margin: 0;
     padding: 0;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 ul.pagenav li {
@@ -623,15 +574,11 @@ ul.pagenav li {
     display: inline-block;
 }
 
-ul.pagenav li.next {
-    float: right;
-
-    a {
-        min-width: auto;
-        width: auto;
-        @extend %button;
-        color: $white;
-    }
+ul.pagenav li.next a {
+    min-width: auto;
+    width: auto;
+    @extend %button;
+    color: $white;
 }
 
 ul.pagenav li.previous a {
@@ -644,12 +591,15 @@ div.pagination ul {
     margin: 0;
     padding: 0;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
 }
 
 div.pagination ul li {
     list-style-type: none;
     display: inline-block;
-    margin: 0 5px;
 }
 
 div.pagination ul li:nth-child(1) {
@@ -665,17 +615,16 @@ div.pagination ul li.pagination-prev > *:before {
 }
 
 #footer {
-    background: transparent;
     width: calc(100% - 60px);
-    padding: 30px;
+    padding: var(--responsive-spacing);
+    // Allow footer to be seen above bottom-tabs
     padding-bottom: 100px;
-    color: #aaa;
 }
 
 #footerwrapper {
     max-width: 1000px;
     width: 100%;
-    margin: 0 auto;
+    margin-inline: auto;
 }
 
 #footerwrapper p {
@@ -690,24 +639,24 @@ div.pagination ul li.pagination-prev > *:before {
 body.error {
     width: 100%;
     height: 100%;
-    background: #f2f2f2;
+    background: var(--colour-elevated-bg);
 }
 
 #errorcontainer {
     width: 100%;
     height: 100%;
-    padding: 60px 0;
+    padding: 4rem 0;
 }
 
 #error {
-    top: 60px;
-    margin: 100px 30px;
-    padding: 30px;
+    top: 4rem;
+    margin: 100px var(--responsive-spacing);
+    padding: var(--responsive-spacing);
     width: 600px;
-    max-width: calc(90% - 60px);
+    max-width: calc(90% - 4rem);
     margin: 0 auto;
     background: #fff;
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     box-shadow: 0 2px 15px #e2e2e2;
 }
 
@@ -718,7 +667,7 @@ button, input, textarea {
 
 input, select, textarea {
     border: 1px solid #e2e2e2;
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     height: 40px;
     max-width: 100% !important;
 }

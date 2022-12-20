@@ -15,12 +15,14 @@ body.home {
             }
         }
     }
+
     #header {
         // @include redGradRadial();
         background: #212121;
         background: radial-gradient(#252525 0%,#000 100%);
         overflow: hidden;
     }
+
     @media (max-width: 1000px) {
         .rc_crazytext {
             width: 100%;
@@ -33,6 +35,7 @@ body.home {
             }
         }
     }
+
     @media (min-width: 1000px) {
         .rc_crazytext {
             width: 100%;
@@ -45,10 +48,12 @@ body.home {
             }
         }
     }
+
     a {
         color: #fff;
         font-weight: bold;
     }
+
     a:hover {
         color: #212121;
     }
@@ -58,6 +63,7 @@ body.home {
     #contentwrapper, #footer {
         display:none;
     }
+
     div.rc_onepage_section {
         height:100vh;
         width:100vw;
@@ -67,6 +73,7 @@ body.home {
         vertical-align:middle;
         overflow-x:hidden;
     }
+
     div.rc_onepage_section_inner {
         max-width:1200px;
         width:80%;
@@ -138,6 +145,7 @@ body.home {
             max-width:80%;
         }
     }
+
     div.rc_skill_container {
         display: inline-block;
         max-width: 100%;
@@ -163,6 +171,7 @@ body.home {
             ;
         }
     }
+
     img.rc_skill {
         width:80px;
         height:80px;

@@ -1,8 +1,8 @@
 @mixin changeableIconColour() {
-    background-color: $text_colour;
+    background-color: var(--colour-fg);
 
     @media (prefers-color-scheme: dark) {
-        background-color: $dark_text_color;
+        background-color: var(--colour-fg);
     }
 }
 

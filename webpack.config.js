@@ -86,7 +86,7 @@ var buildConfig = (dev) => {
                     ],
                 },
                 {
-                    test: /\.woff$/,
+                    test: /\.woff2$/,
                     use: {
                         loader: "url-loader",
                         options: {

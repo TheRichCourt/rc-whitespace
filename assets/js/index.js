@@ -6,8 +6,6 @@ import Transitions from './Transitions';
 import Overrides from './Overrides';
 import SmoothScrollAnchors from './SmoothScrollAnchors';
 import LegacyTransitions from './LegacyTransitions';
-require('16-9/assets/js/app');
-require('16-9/assets/sass/responsive_embed.scss');
 
 // Override some layout form TP extensions that can't be changed at source
 var overrides = new Overrides();
